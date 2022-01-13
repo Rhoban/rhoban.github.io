@@ -145,7 +145,7 @@ p a {
 } 
 @media (min-width: 1200px) {
     .container-small {
-        width: 800px;
+        width: 1000px;
     }
     .container-large {
         width: 1500px;
