@@ -194,3 +194,7 @@ blockquote {
 .heading-link {
     font-size:70%;
 }
+
+a {
+    text-decoration: none;
+}
