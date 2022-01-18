@@ -118,8 +118,8 @@ $$
 
     <ul>
     <li>`P_{r_1}` sont les coordonnées de `P` dans `\{ r_1 \}`</li>
-    <li>`R_{r_1 r_2}` est l'opération du changement de base des vecteurs de la base de `\{ r_2 \}` vers les vecteurs</li>
-    <li>de la base de `\{ r_1 \}`</li>
+    <li>`R_{r_1 r_2}` est l'opération du changement de base des vecteurs de la base de `\{ r_2 \}` vers les vecteurs
+    de la base de `\{ r_1 \}`</li>
     <li>`P_{r_2}` sont les coordonnées de `P` dans `\{ r_2 \}`</li>
     <li>`A_{r_1}` sont les coordonnées de `A` dans `\{ r_1 \}`</li>
     </ul>
