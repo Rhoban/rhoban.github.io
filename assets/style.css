@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image:url('imgs/texture.png');
+    background-image:url('/assets/imgs/texture.png');
 }
 
 .body-container {
