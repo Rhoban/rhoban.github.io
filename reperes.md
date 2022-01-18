@@ -50,7 +50,7 @@ les vecteurs de la base sont unitaires (de longueur $$1$$) et orthogonaux deux �
 ## Coordonnées
 
 On appelle coordonnées d'un point $$P$$ dans le repère $$(O, \vec x_1, \vec y_1)$$
-le tuple $$(x, y)$$ (respectivement $$(x, y, z)$$ en 3D) tel que:
+et on les notes $$\begin{bmatrix} x \\ y \end{bmatrix}$$ (respectivement $$\begin{bmatrix} x \\ y \\ z \end{bmatrix}$$ en 3D) tel que:
 
 $$
 \vec{OP} = x \vec{x_1} + y \vec{y_1}
@@ -59,6 +59,9 @@ $$
 <div class="text-center">
     <img src="/assets/imgs/coordonnees.svg" />
 </div>
+
+Pour l'instant, vous pouvez considérer $$\begin{bmatrix} x \\ y \end{bmatrix}$$ comme une simple notation,
+mais nous verrons plus tard qu'il s'agit d'un *vecteur colonne*.
 
 ## Notations et convention
 
