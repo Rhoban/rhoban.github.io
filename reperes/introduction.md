@@ -83,7 +83,7 @@ notées $$\begin{bmatrix} \rho \\ \theta \end{bmatrix}$$, sont respectivement:
 
 ## Conversions
 
-## Polaire vers cartésien
+### Polaire vers cartésien
 
 Par définition des fonctions $$cos$$ et $$sin$$, on a:
 
@@ -94,7 +94,7 @@ y = \rho sin(\theta)
 \end{cases}
 $$
 
-## Cartésien vers polaire
+### Cartésien vers polaire
 
 Dans la figure suivante:
 
