@@ -315,7 +315,7 @@ $$
 
 On obtient des nouvelles coordonnées qui comportent la même rotation, mais avec également une translation.
 Cette translation est rendue possible par la multiplication avec le terme $$1$$ du vecteur initial.
-Ce $$1$$ est conservé par la multiplication avec la dernière ligne de la matrice homogène.
+Ce $$1$$ est conservé par la multiplication avec la dernière ligne de la matrice.
 
 ## Transformations élémentaires
 
@@ -348,7 +348,7 @@ translation puis une rotation!
 ## Matrices de transformation
 
 Ces matrices homogènes seront de dimension 3x3 en 2D et 4x4 en 3D. En se basant sur l'équation $$(1)$$,
-on peut trouver la matrice homogène suivante qui permettra d'effectuer la transformation:
+on peut trouver la matrice suivante qui permettra d'effectuer la transformation:
 
 $$
 T_{r_1 r_2}
