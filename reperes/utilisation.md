@@ -61,3 +61,6 @@ $$T_{r_1 r_2}$$, transforme un point provenant de $$\{ r_2 \}$$. Il s'agit bien 
 mais que l'on peut interpréter différemment. En effet, ici, nous transformons les coordonnées d'un point
 $$P$$ exprimées dans $$\{ r_1 \}$$ avant un déplacement en des coordonnées du même point **également**
 exprimées dans $$\{ r_1 \}$$ mais après le déplacement.
+
+
+Dans la prochaine partie, nous verrons comment ce que nous avons vu peut être [généralisé en 3D](/reperes/3d)
