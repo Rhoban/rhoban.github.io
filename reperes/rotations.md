@@ -92,5 +92,7 @@ $$\begin{bmatrix} x' \\ y' \end{bmatrix}$$ celles du point avant la rotation.
 
 C'est pour cette raison qu'on pourra appeller cette équation la **formule de la rotation**.
 
+<hr/>
+
 Dans la partie suivante, nous verrons que nous pouvons utiliser [l'algèbre matriciel](/reperes/matrix)
 pour représenter les changements de base.

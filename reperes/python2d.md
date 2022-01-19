@@ -97,13 +97,25 @@ P_r2 = R(alpha).T @ (P_r1 - A) # array([1., 2.])
 
 # Coordonnées homogènes
 
-En coordonnées homogènes, on pourra écrire la fonction:
+En coordonnées homogènes, on pourra écrire les opérations "pures":
+
+```python
+def rotation(alpha):
+    return np.array([[np.cos(alpha), -np.sin(alpha), 0.],
+                     [np.sin(alpha),  np.cos(alpha), 0.],
+                     [           0.,             0., 1.]])
+
+def translation(t):
+    return np.array([[1., 0., t[0]],
+                     [0., 1., t[1]],
+                     [0., 0., 1.]])
+```
+
+Et le changement de repère:
 
 ```python
 def frame(alpha, t):
-    return np.array([[np.cos(alpha), -np.sin(alpha), t[0]],
-                     [np.sin(alpha),  np.cos(alpha), t[1]],
-                     [0.,                       0.,  1.]])
+    return translation(t) @ rotation(alpha)
 ```
 
 En utilisant la formule vue dans [la partie matricielle](/reperes/matrix), on peut également
@@ -134,3 +146,4 @@ T_r2_r1 = frame_inv(T_r1_r2)
 P_r1 = T_r1_r2 @ P_r2 # array([5.36429608, 4.20619318, 1.        ])
 P_r2 = T_r2_r1 @ P_r1 # array([1., 2., 1.]
 ```
+

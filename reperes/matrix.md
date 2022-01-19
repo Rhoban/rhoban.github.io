@@ -314,6 +314,28 @@ On obtient des nouvelles coordonnées qui comportent la même rotation, mais ave
 Cette translation est rendue possible par la multiplication avec le terme $$1$$ du vecteur initial.
 Ce $$1$$ est conservé par la multiplication avec la dernière ligne de la matrice homogène.
 
+## Transformations élémentaires
+
+On peut donc représenter une rotation pure sous la forme:
+
+$$
+\begin{bmatrix}
+cos(\alpha) & -sin(\alpha) & 0 \\
+sin(\alpha) & cos(\alpha) & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+$$
+
+Et une translation pure sous la forme:
+
+$$
+\begin{bmatrix}
+1 & 0 & t_x \\
+0 & 1 & t_y \\
+0 & 0 & 1
+\end{bmatrix}
+$$
+
 ## Matrices de transformation
 
 Ces matrices homogènes seront de dimension 3x3 en 2D et 4x4 en 3D, et auront donc la forme:
@@ -370,3 +392,7 @@ $$
 $$T_{r_1 r_1}$$ est l'identité ($$I$$) car changer des coordonnées d'un repère à lui-même n'a aucun effet.
 Donc, $$T_{r_2 r_1} = T_{r_1 r_2}^{-1}$$, l'inverse de $$T_{r_1 r_2}$$. Cependant, plutôt que d'inverser
 la matrice, on utilisera plutôt l'équation $$(2)$$.
+
+<hr/>
+
+Dans la prochaine partie, nous allons voir comment nous pouvons [implémenter cela en Python](/reperes/python2d)

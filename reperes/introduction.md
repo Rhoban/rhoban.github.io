@@ -93,4 +93,6 @@ Dans les illustrations et les logiciels, la convention de couleur est la suivant
 
 Pour s'en souvenir, pensez au moyen mémo-technique: **XYZ = RGB**
 
+<hr/>
+
 Dans la partie suivante, nous parlerons des [changements de repères](/reperes/changements)

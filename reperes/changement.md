@@ -138,5 +138,7 @@ $$
     </ul>
 </div>
 
+<hr/>
+
 Par la suite, nous verrons comment nous pouvons exprimer les vecteurs d'une base en fonction d'une autre base
 à l'aide de [rotations](/reperes/rotations).
