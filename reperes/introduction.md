@@ -136,8 +136,8 @@ $$
 ### Repères
 
 Pour parler d'un repère, on pourra nommer son origine ainsi que les vecteurs de sa base $$(O, \vec{x_1}, \vec{y_1})$$.
-Cependant, si nous n'en avons pas besoin, on pourra simplement lui donner un nom. Par convention, ce nom sera
-noté entre accolades (par exemple $$\{r\}$$) dans les figures:
+Cependant, si nous n'en avons pas besoin, on pourra le représenter par un nom noté entre accolades
+(par exemple $$\{r\}$$):
 
 <div class="text-center">
     <img src="/assets/imgs/repere_implicite.svg" />
@@ -145,7 +145,7 @@ noté entre accolades (par exemple $$\{r\}$$) dans les figures:
 
 ### Coordonnées d'un point dans un repère
 
-Les coordonnées d'un point $$P$$ dans un repère $${r}$$ seront notées $$P_r$$. Ces coordonnées sont donc un vecteur
+Les coordonnées d'un point $$P$$ dans un repère $$\{ r \}$$ seront notées $$P_r$$. Ces coordonnées sont donc un vecteur
 de dimension 2 ou 3 (selon si on travaille en 2D ou en 3D).
 
 ### Couleurs d'axe
