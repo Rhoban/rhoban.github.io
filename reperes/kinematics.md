@@ -137,7 +137,7 @@ $$
 T_{r_4 r_4'} = R_y(\gamma)
 $$
 
-Grâce à la règle d'annulation du subscript, on a donc:
+Grâce à la règle d'annulation de l'indice, on a donc:
 
 $$
 T_{r_4 \color{red}{r_4'}} T_{\color{red}{r_4'} r_5} = T_{r_4 r_5}

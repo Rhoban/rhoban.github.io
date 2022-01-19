@@ -71,7 +71,7 @@ Nous noterons cette opération:
 $$\begin{bmatrix} x \\ y \end{bmatrix} = R_{r_1 r_2} (\begin{bmatrix} x' \\ y' \end{bmatrix})$$
 
 De manière générale, pour se rappeller du "sens" de l'opération, on appliquera la règle d'annulation
-du subscript:
+de l'indice:
 
 $$
 P_{r_1} = R_{r_1 \color{red}{r_2}} (P_{\color{red}{r_2}})

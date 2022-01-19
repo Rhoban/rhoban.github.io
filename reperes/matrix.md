@@ -361,7 +361,7 @@ R(\alpha) & A_{r_1} \\
 $$
 
 On note ici $$T_{r_1 r_2}$$ la matrice de transformation du repère $$\{ r_2 \}$$ au repère
-$$\{ r_1 \}$$. On pourra appliquer la même règle d'annulation du subscript qu'avec les rotations:
+$$\{ r_1 \}$$. On pourra appliquer la même règle d'annulation de l'indice qu'avec les rotations:
 
 $$
 P_{r_1} = T_{r_1 \color{red}{r_2}} P_{\color{red}{r_2}}
