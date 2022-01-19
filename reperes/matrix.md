@@ -336,6 +336,12 @@ $$
 \end{bmatrix}
 $$
 
+<div class="alert alert-warning">
+Ces transformations pures sont une bonne illustration de la non commutativité de la multiplication
+matricielle (`AB != BA`): une rotation puis une translation n'est pas du tout pareil qu'une
+translation puis une rotation!
+</div>
+
 ## Matrices de transformation
 
 Ces matrices homogènes seront de dimension 3x3 en 2D et 4x4 en 3D, et auront donc la forme:
