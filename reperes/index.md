@@ -13,4 +13,3 @@ Plan:
 * [Implementation en Python (2D)](/reperes/python2d)
 * [Utilisations des repères](/reperes/utilisation)
 * Rotations 3D
-* Coordonnées homogènes
