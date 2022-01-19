@@ -14,4 +14,4 @@ et les changements de repères:
 * [Implementation en Python (2D)](/reperes/python2d)
 * [Utilisations des repères](/reperes/utilisation)
 * [Rotations et transformations 3D](/reperes/3d)
-* Modèle direct de robots articulaires
+* [Modèle direct de robots articulaires](/reperes/kinematics)
