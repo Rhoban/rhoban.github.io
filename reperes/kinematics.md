@@ -183,3 +183,5 @@ Et calculer:
 $$
 D_{r_1} = T_{r_1 \color{red}{r_5}} D_{\color{red}{r_5}}
 $$
+
+Dans la prochaine partie, nous verrons comment cela peut s'écrire [en Python](/reperes/python3d)
