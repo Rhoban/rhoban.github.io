@@ -108,7 +108,7 @@ Il est également possible de trouver $$\theta = atan(\frac{y}{x})$$. Mais cette
 
 1. Si $$x = 0$$, nous aurons une division par zéro,
 2. Elle ne gère pas tous les quadrants du plan. En effet, sur la figure ci-dessus, on induit que $$P$$ est dans le
-premier quadrant, mais ça n'est pas forcément le cas).
+premier quadrant, mais ça n'est pas forcément le cas.
 
 Un bon exemple pour comprendre ce second problème est de considérer les deux points
 $$P = \begin{bmatrix}1 \\ 1\end{bmatrix}$$ et $$P' = \begin{bmatrix}-1 \\ -1\end{bmatrix}$$:
@@ -118,8 +118,8 @@ $$P = \begin{bmatrix}1 \\ 1\end{bmatrix}$$ et $$P' = \begin{bmatrix}-1 \\ -1\end
 </div>
 
 Comme on peut le constater, $$atan(\frac{-1}{-1})$$ = $$atan(\frac{1}{1})$$ = $$45 deg$$, or, on voudrait
-$$\theta_1 = 45 deg$$ et $$\theta_2 = 135 deg$$. Cette formule ne généralise pas le cas où le point est dans un
-autre quadrant.
+$$\theta_1 = 45 deg$$ et $$\theta_2 = 135 deg$$.
+Comme $$P'$$ est dans un autre quadrant que $$P$$, la formule ne fonctionne pas.
 
 Pour résoudre ces problèmes, on peut utiliser la fonction $$atan2$$, qui prend **deux** arguments, $$y$$ et $$x$$
 (dans cet ordre, en référence à $$\frac{y}{x}$$ passés à $$atan$$), la conversion peut donc se faire avec:
@@ -135,7 +135,7 @@ $$
 
 ### Repères
 
-Pour parler d'un repère pourra nommer son origine ainsi que les vecteurs de sa base $$(O, \vec{x_1}, \vec{y_1})$$.
+Pour parler d'un repère, on pourra nommer son origine ainsi que les vecteurs de sa base $$(O, \vec{x_1}, \vec{y_1})$$.
 Cependant, si nous n'en avons pas besoin, on pourra simplement lui donner un nom. Par convention, ce nom sera
 noté entre accolades (par exemple $$\{r\}$$) dans les figures:
 
