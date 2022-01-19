@@ -244,8 +244,8 @@ Ce qui signifie que $$R(-\alpha) = R(\alpha)^T = R(\alpha)^{-1}$$, où $$-1$$ d�
 # Changements de repères
 
 <div class="text-center">
-        <img src="/assets/imgs/changement_repere.svg" width="300" />
-    </div>
+    <img src="/assets/imgs/changement_repere.svg" width="300" />
+</div>
 
 <div class="alert alert-info">
     Soit un repère `\{ r_1 \} = (O, \vec{x_1}, \vec{y_1})`,
