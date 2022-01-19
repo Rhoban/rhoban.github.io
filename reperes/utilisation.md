@@ -7,8 +7,8 @@ mathjax: true
 
 [&laquo; Retour au sommaire](/reperes)
 
-Comme expliqué dans [Modern Robotics, 3.1](/assets/MR.pdf), les repères peuvent servir
-à plusieurs choses.
+Comme expliqué dans [Modern Robotics, chapitre 3.1](/assets/MR.pdf), les repères peuvent servir
+à plusieurs choses que nous allons décrire ici.
 
 # Changer un point de repère
 
