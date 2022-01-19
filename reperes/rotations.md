@@ -22,8 +22,8 @@ On pouvait alors effectuer un **changement de base**:
 
 $$
 \begin{cases}
-x = (\lambda_1 x' + \lambda_3 y') \\
-y = (\lambda_2 x' + \lambda_4 y')
+x = \lambda_1 x' + \lambda_3 y' \\
+y = \lambda_2 x' + \lambda_4 y'
 \end{cases}
 \space \space \space \space (1)
 $$

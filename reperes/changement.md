@@ -41,7 +41,7 @@ $$
 `(x, y)` de `P` dans `\{ r_1 \}` ?
 </div>
 
-Dans cette partie, nous allons supposer que nous savons décomposer $$\vec{x_2}$$ et $$\vec{y_2}$$ en fonction de
+Tout d'abord, nous allons supposer que nous savons décomposer $$\vec{x_2}$$ et $$\vec{y_2}$$ en fonction de
 $$\vec{x_1}$$ et $$\vec{y_1}$$, c'est à dire que l'on connaît $$(\lambda_1, \lambda_2, \lambda_3, \lambda_4)$$ tels que:
 
 $$
@@ -63,24 +63,24 @@ $$
 Ce qui nous permet d'identifier $$x$$ et $$y$$:
 
 $$
-x = (\lambda_1 x' + \lambda_3 y') \\
-y = (\lambda_2 x' + \lambda_4 y')
+x = \lambda_1 x' + \lambda_3 y' \\
+y = \lambda_2 x' + \lambda_4 y'
 $$
 
 Nous noterons cette opération:
-$$\begin{bmatrix} x \\ y \end{bmatrix} = R_{r_1 r_2} \begin{bmatrix} x' \\ y' \end{bmatrix}$$
+$$\begin{bmatrix} x \\ y \end{bmatrix} = R_{r_1 r_2} (\begin{bmatrix} x' \\ y' \end{bmatrix})$$
 
 De manière générale, pour se rappeller du "sens" de l'opération, on appliquera la règle d'annulation
 du subscript:
 
 $$
-P_{r_1} = R_{r_1 \color{red}{r_2}} P_{\color{red}{r_2}}
+P_{r_1} = R_{r_1 \color{red}{r_2}} (P_{\color{red}{r_2}})
 $$
 
 Ici, $$\{ \color{red}{r_2} \}$$ disparaît après l'opération.
 
 Nous utilisons la lettre $$R$$ ici car cette transformation dans des bases orthonormées est en fait une
-*rotation* (nous y reviendront plus tard).
+*rotation* (nous y reviendront dans la [prochaine partie](/reperes/rotations)).
 
 # Changement de repère
 
