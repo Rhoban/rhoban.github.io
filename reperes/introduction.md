@@ -7,11 +7,13 @@ mathjax: true
 
 [&laquo; Retour au sommaire](/reperes)
 
-Lorsqu'un robot évolue, nous avons envie de pouvoir parler de la position et d'orientation
-des éléments. Un robot étant mobile et/ou articulé, ses degrés de liberté font que la position
-relative des éléments change au cours du temps. Aussi, les mesures capturées par les capteurs
-(Par exemple, les pixels sur l'image d'une caméra ou la position des obstacles vues par un LiDAR)
-sont obtenues d'un point de vue intrinsèque.
+Lorsqu'un robot évolue, nous avons envie de pouvoir parler de la position et de l'orientation
+des éléments qui le composent ou de son environnement.
+Un robot étant mobile et/ou articulé, ses degrés de liberté font que certaines de ces positions
+et orientations évoluent au cours du temps.
+Aussi, les mesures capturées par les capteurs (Par exemple, les pixels sur l'image d'une caméra
+ou la position des obstacles vues par un LiDAR) sont obtenues d'un point de vue intrinsèque à un
+des composants.
 
 En guise d'illustration, considérons la situation suivante:
 
@@ -19,15 +21,15 @@ En guise d'illustration, considérons la situation suivante:
     <img src="/assets/imgs/motivation.svg" />
 </div>
 
-On peut imaginer les questions suivantes:
+On peut imaginer les questions:
 
-* Connaissant la position/orientation de mon robot, et sachant qu'il perçoit un obstacle, où se trouve
+* Connaissant la position/orientation du robot, et sachant qu'il perçoit un obstacle, où se trouve
 cet obstacle pour un autre robot ?
 * Sachant la position d'une caméra fixée sur un robot à un endroit connu, et un objet détecté sur l'image,
 où est cet objet sur le sol ?
 * Si un satellite positionne un robot ainsi qu'une balise fixe au sol, où est le robot par rapport à la balise
 fixe ?
-* Si un robot perçoit un objet d'interêt et qu'il se déplace, où est l'objet après le déplacement ?
+* Si un robot perçoit un objet d’intérêt et qu'il se déplace, où est l'objet après le déplacement ?
 
 Pour répondre à ces questions, nous introduisons la notion de *repères* (les éléments notés entre
 accolades sur la figure ci-contre).
@@ -39,9 +41,9 @@ accolades sur la figure ci-contre).
 Un repère est défini par:
 
 * Un point d'**origine**,
-* Une **base**, qui est un ensemble de vecteurs
+* Un ensemble de vecteur qu'on appelle la **base**.
 
-Par exemple, $$(O, \vec{x_1}, \vec{y_1})$$ forme un repère:
+Par exemple, $$(O, \vec{x_1}, \vec{y_1})$$ forme un repère d'origine $$O$$ et de base $$\vec{x_1}, \vec{y_1}$$:
 
 <div class="text-center">
     <img src="/assets/imgs/repere.svg" />
@@ -53,7 +55,7 @@ les vecteurs de la base sont unitaires (de longueur $$1$$) et orthogonaux deux �
 ## Coordonnées
 
 On appelle coordonnées d'un point $$P$$ dans le repère $$(O, \vec x_1, \vec y_1)$$
-et on les notes $$\begin{bmatrix} x \\ y \end{bmatrix}$$ (respectivement $$\begin{bmatrix} x \\ y \\ z \end{bmatrix}$$ en 3D) tel que:
+les valeurs de $$\begin{bmatrix} x \\ y \end{bmatrix}$$ (respectivement $$\begin{bmatrix} x \\ y \\ z \end{bmatrix}$$ en 3D) tel que:
 
 $$
 \vec{OP} = x \vec{x_1} + y \vec{y_1}
@@ -63,8 +65,70 @@ $$
     <img src="/assets/imgs/coordonnees.svg" />
 </div>
 
-Pour l'instant, vous pouvez considérer $$\begin{bmatrix} x \\ y \end{bmatrix}$$ comme une simple notation,
+Pour l'instant, vous pouvez considérer $$\begin{bmatrix} x \\ y \end{bmatrix}$$ comme une notation,
 mais nous verrons plus tard qu'il s'agit d'un *vecteur colonne*.
+
+## Coordonnées polaires
+
+Dans un repère orthonormé, une autre représentation des coordonnées est la représentation **polaire**. Ces dernières,
+souvent notées $$\begin{bmatrix} \rho \\ \theta \end{bmatrix}$$, respectivement:
+
+* $$\rho$$ est la longueur $$\| \vec{OP} \|$$
+* $$\theta$$ est l'angle entre $$\vec{x_1}$$ et $$\vec{OP}$$
+
+<div class="text-center">
+    <img src="/assets/imgs/polaires.svg" />
+</div>
+
+## Conversions
+
+## Polaire vers cartésien
+
+Par définition des fonctions $$cos$$ et $$sin$$, on a:
+
+$$
+\begin{cases}
+x = \rho cos(\theta) \\
+y = \rho sin(\theta)
+\end{cases}
+$$
+
+## Cartésien vers polaire
+
+Dans la figure suivante:
+
+<div class="text-center">
+    <img src="/assets/imgs/polaires_cartesien.svg" />
+</div>
+
+On peut utiliser Pythagore dans le triangle rectangle pour trouver $$\rho = \sqrt{x^2 + y^2}$$.
+
+Il est également possible de trouver $$\theta = atan(\frac{y}{x})$$. Mais cette formule souffre de deux problèmes:
+
+1. Si $$x = 0$$, nous aurons une division par zéro,
+2. Elle ne gère pas tous les quadrants du plan. En effet, sur la figure ci-dessus, on induit que $$P$$ est dans le
+premier quadrant, mais ça n'est pas forcément le cas).
+
+Un bon exemple pour comprendre ce second problème est de considérer les deux points
+$$P = \begin{bmatrix}1 \\ 1\end{bmatrix}$$ et $$P' = \begin{bmatrix}-1 \\ -1\end{bmatrix}$$:
+
+<div class="text-center">
+    <img src="/assets/imgs/quadrants.svg" />
+</div>
+
+Comme on peut le constater, $$atan(\frac{-1}{-1})$$ = $$atan(\frac{1}{1})$$ = $$45 deg$$, or, on voudrait
+$$\theta_1 = 45 deg$$ et $$\theta_2 = 135 deg$$. Cette formule ne généralise pas le cas où le point est dans un
+autre quadrant.
+
+Pour résoudre ces problèmes, on peut utiliser la fonction $$atan2$$, qui prend **deux** arguments, $$y$$ et $$x$$
+(dans cet ordre, en référence à $$\frac{y}{x}$$ passés à $$atan$$), la conversion peut donc se faire avec:
+
+$$
+\begin{cases}
+\rho = \sqrt{x^2 + y^2} \\
+\theta = atan2(y, x)
+\end{cases}
+$$
 
 ## Notations et convention
 
