@@ -147,3 +147,6 @@ P_r1 = T_r1_r2 @ P_r2 # array([5.36429608, 4.20619318, 1.        ])
 P_r2 = T_r2_r1 @ P_r1 # array([1., 2., 1.]
 ```
 
+<hr/>
+
+Dans la prochaine partie, nous verrons comment les [repères peuvent être utilisé](/reperes/utilisation)
