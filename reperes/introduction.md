@@ -42,7 +42,7 @@ accolades sur la figure ci-dessus).
 Un repère est défini par:
 
 * Un point d'**origine**,
-* Un ensemble de vecteur qu'on appelle la **base**.
+* Un ensemble de vecteurs qu'on appelle la **base**.
 
 Par exemple, $$(O, \vec{x_1}, \vec{y_1})$$ forme un repère d'origine $$O$$ et de base $$\vec{x_1}, \vec{y_1}$$:
 
@@ -72,10 +72,10 @@ mais nous verrons plus tard qu'il s'agit d'un *vecteur colonne*.
 ## Coordonnées polaires
 
 Dans un repère orthonormé, une autre représentation des coordonnées est la représentation **polaire**. Ces dernières,
-souvent notées $$\begin{bmatrix} \rho \\ \theta \end{bmatrix}$$, respectivement:
+notées $$\begin{bmatrix} \rho \\ \theta \end{bmatrix}$$, sont respectivement:
 
-* $$\rho$$ est la longueur $$\| \vec{OP} \|$$
-* $$\theta$$ est l'angle entre $$\vec{x_1}$$ et $$\vec{OP}$$
+* $$\rho$$: la longueur $$\| \vec{OP} \|$$
+* $$\theta$$: l'angle entre $$\vec{x_1}$$ et $$\vec{OP}$$
 
 <div class="text-center">
     <img src="/assets/imgs/polaires.svg" />
