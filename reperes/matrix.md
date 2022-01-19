@@ -252,7 +252,10 @@ Ce qui signifie que $$R(-\alpha) = R(\alpha)^T = R(\alpha)^{-1}$$, où $$-1$$ d�
     un repère `\{ r_2 \} = (A, \vec{x_2}, \vec{y_2})`,
     sachant que `\alpha` est l'angle entre `\vec{x_1}` et `\vec{x_2}`,
     pour point `P`, on a:
-    $$P_{r_1} = R(\alpha) P_{r_2} + A_{r_1}$$
+    $$
+    P_{r_1} = R(\alpha) P_{r_2} + A_{r_1}
+    \space \space \space \space (1)
+    $$
 
     <hr/>
 
@@ -260,7 +263,7 @@ Ce qui signifie que $$R(-\alpha) = R(\alpha)^T = R(\alpha)^{-1}$$, où $$-1$$ d�
 
     $$
     P_{r_2} = R(\alpha)^{-1} (P_{r_1} - A_{r_1})
-    \space \space \space \space (1)
+    \space \space \space \space (2)
     $$
 </div>
 
@@ -344,7 +347,8 @@ translation puis une rotation!
 
 ## Matrices de transformation
 
-Ces matrices homogènes seront de dimension 3x3 en 2D et 4x4 en 3D, et auront donc la forme:
+Ces matrices homogènes seront de dimension 3x3 en 2D et 4x4 en 3D. En se basant sur l'équation $$(1)$$,
+on peut trouver la matrice homogène suivante qui permettra d'effectuer la transformation:
 
 $$
 T_{r_1 r_2}
@@ -371,7 +375,7 @@ $$
 
 ## Inversion
 
-En reprenant l'équation $$(1)$$, on a:
+En reprenant l'équation $$(2)$$, on a:
 
 $$
 P_{r_2} = R(\alpha)^{-1} P_{r_1} - R(\alpha)^{-1} A_{r_1}
@@ -386,7 +390,7 @@ T_{r_2 r_1}
 R(\alpha)^{-1} & -R(\alpha)^{-1} A_{r_1} \\
 0_{1 \times 3} & 1
 \end{bmatrix}
-\space \space \space \space (2)
+\space \space \space \space (3)
 $$
 
 Avec la règle vue précédemment:
@@ -397,7 +401,7 @@ $$
 
 $$T_{r_1 r_1}$$ est l'identité ($$I$$) car changer des coordonnées d'un repère à lui-même n'a aucun effet.
 Donc, $$T_{r_2 r_1} = T_{r_1 r_2}^{-1}$$, l'inverse de $$T_{r_1 r_2}$$. Cependant, plutôt que d'inverser
-la matrice, on utilisera plutôt l'équation $$(2)$$.
+la matrice, on utilisera plutôt l'équation $$(3)$$.
 
 <hr/>
 
