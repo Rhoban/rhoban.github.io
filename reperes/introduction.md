@@ -33,7 +33,7 @@ où est cet objet sur le sol ?
 * Si un robot perçoit un objet d’intérêt et qu'il se déplace, où est l'objet après le déplacement ?
 
 Pour répondre à ces questions, nous introduisons la notion de *repères* (les éléments notés entre
-accolades sur la figure ci-contre).
+accolades sur la figure ci-dessus).
 
 # Définitions
 
