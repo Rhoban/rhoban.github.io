@@ -58,5 +58,6 @@ $$
 
 Cette dernière partie de l'équation semble étrange, car la règle d'annulation du subscript voudrait que
 $$T_{r_1 r_2}$$, transforme un point provenant de $$\{ r_2 \}$$. Il s'agit bien d'un changement de repère,
-mais que l'on peut interpréter différemment. En effet, ici, nous transformons des coordonnées
-exprimées dans $$\{ r_1 \}$$ en des coordonnées **également** exprimées dans $$\{ r_1 \}$$.
+mais que l'on peut interpréter différemment. En effet, ici, nous transformons les coordonnées d'un point
+$$P$$ exprimées dans $$\{ r_1 \}$$ avant un déplacement en des coordonnées du même point **également**
+exprimées dans $$\{ r_1 \}$$ mais après le déplacement.
