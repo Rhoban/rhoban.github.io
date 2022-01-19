@@ -15,3 +15,4 @@ et les changements de repères:
 * [Utilisations des repères](/reperes/utilisation)
 * [Rotations et transformations 3D](/reperes/3d)
 * [Modèle direct de robots articulaires](/reperes/kinematics)
+* [Implementation en Python (3D)](/reperes/python3d)
