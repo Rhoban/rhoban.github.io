@@ -13,7 +13,8 @@ Un robot étant mobile et/ou articulé, ses degrés de liberté font que certain
 et orientations évoluent au cours du temps.
 Aussi, les mesures capturées par les capteurs (Par exemple, les pixels sur l'image d'une caméra
 ou la position des obstacles vues par un LiDAR) sont obtenues d'un point de vue intrinsèque à un
-des composants.
+des composants, il est donc nécessaire de pouvoir les transposer d'un autre "point de vue",
+c'est ce que nous allons formaliser ici.
 
 En guise d'illustration, considérons la situation suivante:
 
