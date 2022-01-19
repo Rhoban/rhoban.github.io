@@ -211,10 +211,10 @@ cos(\alpha) & sin(\alpha) \\
 =
 
 \begin{bmatrix}
-\underbrace{cos(\alpha)^2 + sin(\alpha) ^2}_{1} &
-\underbrace{cos(\alpha) sin(\alpha) - cos(\alpha) sin(\alpha)}_{0} \\
-\underbrace{cos(\alpha) sin(\alpha) - cos(\alpha) sin(\alpha)}_{0} &
-\underbrace{cos(\alpha)^2 + sin(\alpha) ^2}_{1}
+cos(\alpha)^2 + sin(\alpha) ^2 &
+cos(\alpha) sin(\alpha) - cos(\alpha) sin(\alpha) \\
+cos(\alpha) sin(\alpha) - cos(\alpha) sin(\alpha) &
+cos(\alpha)^2 + sin(\alpha) ^2
 \end{bmatrix}
 
 \\
