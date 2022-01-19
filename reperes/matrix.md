@@ -348,7 +348,8 @@ translation puis une rotation!
 ## Matrices de transformation
 
 Ces matrices homogènes seront de dimension 3x3 en 2D et 4x4 en 3D. En se basant sur l'équation $$(1)$$,
-on peut trouver la matrice suivante qui permettra d'effectuer la transformation:
+on peut trouver la matrice suivante qui permettra d'effectuer la transformation avec des coordonnées
+homogènes:
 
 $$
 T_{r_1 r_2}
