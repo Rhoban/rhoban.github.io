@@ -24,12 +24,12 @@ En guise d'illustration, considérons la situation suivante:
 
 On peut imaginer les questions:
 
-* Connaissant la position/orientation du robot, et sachant qu'il perçoit un obstacle, où se trouve
-cet obstacle pour un autre robot ?
+* Si on connaît la position/orientation du robot par rapport au sol, et du sol par rapport au
+satellite, où se trouve le robot par rapport au satellite ?
+* Supposons que le robot perçoive un obstacle de son propre point de vue, et que l'on connaisse
+la position/orientation du robot par rapport au sol, où est cet obstacle par rapport au sol ?
 * Sachant la position d'une caméra fixée sur un robot à un endroit connu, et un objet détecté sur l'image,
 où est cet objet sur le sol ?
-* Si un satellite positionne un robot ainsi qu'une balise fixe au sol, où est le robot par rapport à la balise
-fixe ?
 * Si un robot perçoit un objet d’intérêt et qu'il se déplace, où est l'objet après le déplacement ?
 
 Pour répondre à ces questions, nous introduisons la notion de *repères* (les éléments notés entre
