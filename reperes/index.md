@@ -15,6 +15,7 @@ et les changements de repères:
 * [Changements de repères](/reperes/changements)
 * [Rotations 2D](/reperes/rotations)
 * [Notations matricielles et coordonnées homogènes](/reperes/matrix)
+    * [Exercice d'application](/reperes/ex_reperes)
 * [Implementation en Python (2D)](/reperes/python2d)
 * [Utilisations des repères](/reperes/utilisation)
 * [Rotations et transformations 3D](/reperes/3d)
