@@ -23,4 +23,5 @@ et les changements de repères:
 * [Rotations et transformations 3D](/reperes/3d)
 * [Modèle direct de robots articulaires](/reperes/kinematics)
 * [Implementation en Python (3D)](/reperes/python3d)
+    * [TP Robot 3 axes](/reperes/tp_3axis)
     * [TP Robot 6 axes](/reperes/tp_6axis)
