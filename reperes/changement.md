@@ -7,7 +7,7 @@ mathjax: true
 
 [&laquo; Retour au sommaire](/reperes)
 
-Dans la [partie précédente](reperes.md), nous avons introduit le concept de *repères*. Jusqu'ici,
+Dans la [partie précédente](/reperes/intro), nous avons introduit le concept de *repères*. Jusqu'ici,
 ces derniers permettent de définir la position d'un point dans le plan ou l'espace.
 
 Dans cette partie, nous allons discuter de comment changer un point de repère.
