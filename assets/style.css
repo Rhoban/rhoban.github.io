@@ -10,6 +10,7 @@
 
 body {
     background-image:url('/assets/imgs/texture.png');
+    text-align: justify;
 }
 
 .body-container {
