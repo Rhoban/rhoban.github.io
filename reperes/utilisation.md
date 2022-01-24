@@ -38,7 +38,7 @@ objet dans le monde:
 * En 2D, une telle configuration correspond à **3 degrés de liberté**
 * En 3D, une telle configuration correspond à **6 degrés de liberté**
 
-cf [Modern Robotics, 2.1](/assets/MR.pdf)
+cf [Modern Robotics, chapitre 2.1](/assets/MR.pdf)
 
 # Transformer des coordonnées entre avant et après un mouvement
 
