@@ -35,6 +35,11 @@ objet dans le monde:
     <img src="/assets/imgs/pose.svg" width="300" />
 </div>
 
+* En 2D, une telle configuration correspond à **3 degrés de liberté**
+* En 3D, une telle configuration correspond à **6 degrés de liberté**
+
+cf [Modern Robotics, 2.1](/assets/MR.pdf)
+
 # Transformer des coordonnées entre avant et après un mouvement
 
 En mélangeant les deux concepts vus précédemment, imaginons qu'un repère $$\{ r_1 \}$$ soit attaché
