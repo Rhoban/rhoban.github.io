@@ -20,8 +20,6 @@ Dans ce module, nous travaillerons sur un simulateur, avec comme objectif de fai
     </div>
 </div>
 
-# Objectif final
-
 L'objectif est de compléter le contenu de `quadruped/control.py`. Chaque étape ci-dessous vous amènera à compléter une partie du code qui vous permettra d'obtenir une marche fonctionnelle. **Attention: ne touchez pas à `quadruped/simulator.py`**
 
 # Séances
