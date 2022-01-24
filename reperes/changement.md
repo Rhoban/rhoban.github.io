@@ -110,7 +110,7 @@ dans ce changement)
 
 Une fois cela fait, on peut facilement retrouver $$\begin{bmatrix} x \\ y \end{bmatrix}$$ par **translation**.
 En effet, on observe par relation de Chasles que: $$\vec{OP} = \vec{OA} + \vec{AP}$$. Les vecteurs étant dans
-la même base, cette propriété est vraie pour leurs coordonnées, et donc:
+la même base, dans le monde des coordonnées, on a le système:
 
 $$
 P_{r_1} = R_{r_1 r_2} (P_{r_2}) + A_{r_1}
