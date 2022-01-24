@@ -29,11 +29,7 @@ On notera:
 Ce qui équivaut à dire:
 
 $$
-\vec {OP} = 
-\begin{cases}
-x \vec {i} + y \vec{j} \\
-x' \vec{i'} + y' \vec{j'} \space \space \space \space  (1)
-\end{cases}
+\vec {OP} =  x \vec {i} + y \vec{j} = x' \vec{i'} + y' \vec{j'} \space \space \space \space  (1)
 $$
 
 <div class="alert alert-info">
