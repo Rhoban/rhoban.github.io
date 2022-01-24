@@ -4,6 +4,10 @@ layout: default
 permalink: /reperes/
 ---
 
+<div class="float-end">
+    <img src="/assets/imgs/changement_repere.svg" />
+</div>
+
 Ce cours a pour objectif d'expliquer la théorie et la pratique derrière les repères
 et les changements de repères:
 
