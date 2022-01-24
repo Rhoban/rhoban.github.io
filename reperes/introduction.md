@@ -44,7 +44,7 @@ Un repère est défini par:
 * Un point d'**origine**,
 * Un ensemble de vecteurs qu'on appelle la **base**.
 
-Par exemple, $$(O, \vec{x_1}, \vec{y_1})$$ forme un repère d'origine $$O$$ et de base $$\vec{x_1}, \vec{y_1}$$:
+Par exemple, $$(O, \vec{i}, \vec{j})$$ forme un repère d'origine $$O$$ et de base $$\vec{i}, \vec{j}$$:
 
 <div class="text-center">
     <img src="/assets/imgs/repere.svg" />
@@ -55,11 +55,11 @@ les vecteurs de la base sont unitaires (de longueur $$1$$) et orthogonaux deux �
 
 ## Coordonnées
 
-On appelle coordonnées d'un point $$P$$ dans le repère $$(O, \vec x_1, \vec y_1)$$
+On appelle coordonnées d'un point $$P$$ dans le repère $$(O, \vec i, \vec j)$$
 les valeurs de $$\begin{bmatrix} x \\ y \end{bmatrix}$$ (respectivement $$\begin{bmatrix} x \\ y \\ z \end{bmatrix}$$ en 3D) tel que:
 
 $$
-\vec{OP} = x \vec{x_1} + y \vec{y_1}
+\vec{OP} = x \vec{i} + y \vec{j}
 $$
 
 <div class="text-center">
@@ -75,7 +75,7 @@ Dans un repère orthonormé, une autre représentation des coordonnées est la r
 notées $$\begin{bmatrix} \rho \\ \theta \end{bmatrix}$$, sont respectivement:
 
 * $$\rho$$: la longueur $$\| \vec{OP} \|$$
-* $$\theta$$: l'angle entre $$\vec{x_1}$$ et $$\vec{OP}$$
+* $$\theta$$: l'angle entre $$\vec{i}$$ et $$\vec{OP}$$
 
 <div class="text-center">
     <img src="/assets/imgs/polaires.svg" />
@@ -135,7 +135,7 @@ $$
 
 ### Repères
 
-Pour parler d'un repère, on pourra nommer son origine ainsi que les vecteurs de sa base $$(O, \vec{x_1}, \vec{y_1})$$.
+Pour parler d'un repère, on pourra nommer son origine ainsi que les vecteurs de sa base $$(O, \vec{i}, \vec{j})$$.
 Cependant, si nous n'en avons pas besoin, on pourra le représenter par un nom noté entre accolades
 (par exemple $$\{r\}$$):
 

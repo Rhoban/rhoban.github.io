@@ -15,7 +15,7 @@ Dans cette partie, nous allons discuter de comment changer un point de repère.
 # Changement de base
 
 Supposons tout d'abord que seule la base de deux repères est différente, mais que l'origine est la même.
-On peut par exemple prendre $$\{r_1\} = (O, \vec{x_1}, \vec{y_1})$$ et $$\{r_2\} = (O, \vec{x_2}, \vec{y_2})$$:
+On peut par exemple prendre $$\{r_1\} = (O, \vec{i}, \vec{j})$$ et $$\{r_2\} = (O, \vec{i'}, \vec{j'})$$:
 
 <div class="text-center">
     <img src="/assets/imgs/2bases.svg" />
@@ -31,8 +31,8 @@ Ce qui équivaut à dire:
 $$
 \vec {OP} = 
 \begin{cases}
-x \vec {x_1} + y \vec{y_1} \\
-x' \vec{x_2} + y' \vec{y_2} \space \space \space \space  (1)
+x \vec {i} + y \vec{j} \\
+x' \vec{i'} + y' \vec{j'} \space \space \space \space  (1)
 \end{cases}
 $$
 
@@ -41,23 +41,23 @@ $$
 `(x, y)` de `P` dans `\{ r_1 \}` ?
 </div>
 
-Tout d'abord, nous allons supposer que nous savons décomposer $$\vec{x_2}$$ et $$\vec{y_2}$$ en fonction de
-$$\vec{x_1}$$ et $$\vec{y_1}$$, c'est à dire que l'on connaît $$(\lambda_1, \lambda_2, \lambda_3, \lambda_4)$$ tels que:
+Tout d'abord, nous allons supposer que nous savons décomposer $$\vec{i'}$$ et $$\vec{j'}$$ en fonction de
+$$\vec{i}$$ et $$\vec{j}$$, c'est à dire que l'on connaît $$(\lambda_1, \lambda_2, \lambda_3, \lambda_4)$$ tels que:
 
 $$
-\vec{x_2} = \lambda_1 \vec{x_1} + \lambda_2 \vec{y_1} \\
-\vec{y_2} = \lambda_3 \vec{x_1} + \lambda_4 \vec{y_1} 
+\vec{i'} = \lambda_1 \vec{i} + \lambda_2 \vec{j} \\
+\vec{j'} = \lambda_3 \vec{i} + \lambda_4 \vec{j} 
 $$
 
-Dans ce cas, on peut donc substituer $$\vec{x_2}$$ et $$\vec{y_2}$$ dans $$(1)$$:
+Dans ce cas, on peut donc substituer $$\vec{i'}$$ et $$\vec{j'}$$ dans $$(1)$$:
 
 $$
-x' \vec{x_2} + y' \vec{y_2} \\
-= x' (\lambda_1 \vec{x_1} + \lambda_2 \vec{y_1}) + y' (\lambda_3 \vec{x_1} + \lambda_4 \vec{y_1}) \\
+x' \vec{i'} + y' \vec{j'} \\
+= x' (\lambda_1 \vec{i} + \lambda_2 \vec{j}) + y' (\lambda_3 \vec{i} + \lambda_4 \vec{j}) \\
 = 
-\underbrace{(\lambda_1 x' + \lambda_3 y')}_{x} \vec{x_1}
+\underbrace{(\lambda_1 x' + \lambda_3 y')}_{x} \vec{i}
 +
-\underbrace{(\lambda_2 x' + \lambda_4 y')}_{y} \vec{y_1}
+\underbrace{(\lambda_2 x' + \lambda_4 y')}_{y} \vec{j}
 $$
 
 Ce qui nous permet d'identifier $$x$$ et $$y$$:
@@ -85,8 +85,8 @@ Nous utilisons la lettre $$R$$ ici car cette transformation dans des bases ortho
 # Changement de repère
 
 Prenons maintenant deux repères,
-$$\{ r_1 \} = (O, \vec{x_1}, \vec{y_1})$$ et 
-$$\{ r_2 \} = (A, \vec{x_2}, \vec{y_2})$$:
+$$\{ r_1 \} = (O, \vec{i}, \vec{j})$$ et 
+$$\{ r_2 \} = (A, \vec{i'}, \vec{j'})$$:
 
 <div class="text-center">
     <img src="/assets/imgs/2reperes.svg" />
@@ -95,8 +95,8 @@ $$\{ r_2 \} = (A, \vec{x_2}, \vec{y_2})$$:
 On appellera $$\begin{bmatrix} x' \\ y' \end{bmatrix}$$ les coordonnées de $$P$$ dans $$\{ r_2 \}$$, et on souhaite trouver
 $$\begin{bmatrix} x \\ y \end{bmatrix}$$, les coordonnées de $$P$$ dans $$\{ r_1 \}$$.
 
-On introduit un repère intermédiaire $$\{r_3\} = (A, \vec{x_1}, \vec{y_1})$$. Sur la figure ci-dessus,
-on peut le voir en opacité réduite: on a "reporté" les vecteurs $$\vec{x_1}$$ et $$\vec{x_2}$$ de
+On introduit un repère intermédiaire $$\{r_3\} = (A, \vec{i}, \vec{j})$$. Sur la figure ci-dessus,
+on peut le voir en opacité réduite: on a "reporté" les vecteurs $$\vec{i}$$ et $$\vec{i'}$$ de
 $$\{ r_1 \}$$ autour de l'origine $$A$$.
 
 Grâce à la partie précédente, on peut exprimer la position du point $$P$$ dans $$\{ r_3 \}$$:
@@ -120,8 +120,8 @@ $$
     <b>Changement de repère</b>
     <hr/>
 
-    Soit un repère `\{ r_1 \} = (O, \vec{x_1}, \vec{y_1})`,
-    un repère `\{ r_2 \} = (A, \vec{x_2}, \vec{y_2})`
+    Soit un repère `\{ r_1 \} = (O, \vec{i}, \vec{j})`,
+    un repère `\{ r_2 \} = (A, \vec{i'}, \vec{j'})`
     et un point `P`, on a:
     $$P_{r_1} = R_{r_1 r_2} (P_{r_2}) + A_{r_1}$$
 

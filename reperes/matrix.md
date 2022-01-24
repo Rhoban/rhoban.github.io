@@ -88,15 +88,15 @@ On appelle $$R(\alpha)$$ la **matrice de rotation**.
 
 ## Utilisation
 
-Si on dispose de deux repères $$\{ r_1 \} = (O, \vec{x_1}, \vec{y_1})$$ et $$(O, \vec{x_2}, \vec{y_2})$$ avec un angle
-$$\alpha$$ entre $$\{ r_2 \} = \vec{x_1}$$ et $$\vec{x_2}$$, alors la matrice de rotation $$R(\alpha)$$ est
+Si on dispose de deux repères $$\{ r_1 \} = (O, \vec{i}, \vec{j})$$ et $$(O, \vec{i'}, \vec{j'})$$ avec un angle
+$$\alpha$$ entre $$\{ r_2 \} = \vec{i}$$ et $$\vec{i'}$$, alors la matrice de rotation $$R(\alpha)$$ est
 la matrice de changement de base de $$\{ r_2 \}$$ vers $$\{ r_1 \}$$:
 
 $$
 R_{r_1 r_2} = R(\alpha)
 $$
 
-Dans $$\{ r_2 \}$$, les coordonnées du vecteur $$\vec{x_2}$$ sont $$\begin{bmatrix} 1 \\ 0 \end{bmatrix}$$, après
+Dans $$\{ r_2 \}$$, les coordonnées du vecteur $$\vec{i'}$$ sont $$\begin{bmatrix} 1 \\ 0 \end{bmatrix}$$, après
 changement de base on obtient:
 
 $$
@@ -115,7 +115,7 @@ sin(\alpha)
 \end{bmatrix}
 $$
 
-Aussi, les coordonnées de $$\vec{y_2}$$ sont $$\begin{bmatrix} 0 \\ 1 \end{bmatrix}$$, on obtient donc:
+Aussi, les coordonnées de $$\vec{j'}$$ sont $$\begin{bmatrix} 0 \\ 1 \end{bmatrix}$$, on obtient donc:
 
 $$
 \begin{bmatrix}
@@ -139,13 +139,13 @@ de **l'ancienne base** exprimées dans la **nouvelle base**, et ainsi de suite:
 $$
 R =
 \begin{bmatrix}
-\vec{x_2}_{r_1} &
-\vec{y_2}_{r_1} 
+\vec{i'}_{r_1} &
+\vec{j'}_{r_1} 
 \end{bmatrix}
 $$
 
-Où $$\vec{x_2}_{r_1}$$ est le vecteur 2x1 des coordonnées de $$\vec{x_2}$$ dans $$\{ r_1 \}$$ et
-$$\vec{y_2}_{r_1}$$ le vecteur 2x1 des coordonnées de $$\vec{y2}$$ dans $$\{ r_1 \}$$.
+Où $$\vec{i'}_{r_1}$$ est le vecteur 2x1 des coordonnées de $$\vec{i'}$$ dans $$\{ r_1 \}$$ et
+$$\vec{j'}_{r_1}$$ le vecteur 2x1 des coordonnées de $$\vec{y2}$$ dans $$\{ r_1 \}$$.
 
 # Inverse d'une matrice de rotation
 
@@ -248,9 +248,9 @@ Ce qui signifie que $$R(-\alpha) = R(\alpha)^T = R(\alpha)^{-1}$$, où $$-1$$ d�
 </div>
 
 <div class="alert alert-info">
-    Soit un repère `\{ r_1 \} = (O, \vec{x_1}, \vec{y_1})`,
-    un repère `\{ r_2 \} = (A, \vec{x_2}, \vec{y_2})`,
-    sachant que `\alpha` est l'angle entre `\vec{x_1}` et `\vec{x_2}`,
+    Soit un repère `\{ r_1 \} = (O, \vec{i}, \vec{j})`,
+    un repère `\{ r_2 \} = (A, \vec{i'}, \vec{j'})`,
+    sachant que `\alpha` est l'angle entre `\vec{i}` et `\vec{i'}`,
     pour point `P`, on a:
     $$
     P_{r_1} = R(\alpha) P_{r_2} + A_{r_1}
