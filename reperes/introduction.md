@@ -69,6 +69,18 @@ $$
 Pour l'instant, vous pouvez considérer $$\begin{bmatrix} x \\ y \end{bmatrix}$$ comme une notation,
 mais nous verrons plus tard qu'il s'agit d'un *vecteur colonne*.
 
+<div class="alert alert-secondary d-flex align-items-center justify-content-center ">
+    <div class="text-center">
+        <img src="/assets/imgs/youtube.png" width="32" class="m-2" />
+    </div>
+
+    <div>
+        <big><a target="_blank" href="https://www.youtube.com/watch?v=PXOAIJ-DQ-A">Capsule vidéo: Coordonnées cartésiennes (1/2)</a></big>
+        <br/>
+        <big><a target="_blank" href="https://www.youtube.com/watch?v=3WVT5pJ6rN8">Capsule vidéo: Coordonnées cartésiennes (2/2)</a></big>
+    </div>
+</div>
+
 ## Coordonnées polaires
 
 Dans un repère orthonormé, une autre représentation des coordonnées est la représentation **polaire**. Ces dernières,
@@ -79,6 +91,18 @@ notées $$\begin{bmatrix} \rho \\ \theta \end{bmatrix}$$, sont respectivement:
 
 <div class="text-center">
     <img src="/assets/imgs/polaires.svg" />
+</div>
+
+<div class="alert alert-secondary d-flex align-items-center justify-content-center ">
+    <div class="text-center">
+        <img src="/assets/imgs/youtube.png" width="32" class="m-2" />
+    </div>
+
+    <div>
+        <big><a target="_blank" href="https://www.youtube.com/watch?v=fwEUYWZovY0">Capsule vidéo: Coordonnées polaires (1/2)</a></big>
+        <br/>
+        <big><a target="_blank" href="https://www.youtube.com/watch?v=fRWYfnuPM-0">Capsule vidéo: Coordonnées polaires (2/2)</a></big>
+    </div>
 </div>
 
 ## Conversions

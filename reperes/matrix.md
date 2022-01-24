@@ -50,6 +50,14 @@ par la même colonne pour obtenir $$c \times e + d \times f$$.
     les dimensions ne sont pas bonnes (`A` doit avoir autant de colonnes que `B` de lignes).
 </div>
 
+<div class="alert alert-secondary d-flex align-items-center justify-content-center ">
+    <div class="text-center">
+        <img src="/assets/imgs/youtube.png" width="32" class="m-2" />
+    </div>
+
+    <big><a target="_blank" href="https://www.youtube.com/watch?v=8F8WANQvTbE">Capsule vidéo: Produit de matrices</a></big>
+</div>
+
 # Matrice de rotation
 
 ## Expression
