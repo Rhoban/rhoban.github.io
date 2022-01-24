@@ -41,15 +41,14 @@ $$
 `(x, y)` de `P` dans `\{ r_1 \}` ?
 </div>
 
-Tout d'abord, nous allons supposer que nous savons décomposer $$\vec{i'}$$ et $$\vec{j'}$$ en fonction de
-$$\vec{i}$$ et $$\vec{j}$$, c'est à dire que l'on connaît $$(\lambda_1, \lambda_2, \lambda_3, \lambda_4)$$ tels que:
+Comme $$\vec{i}$$ et $$\vec{j}$$ est une base, il existe $$(\lambda_1, \lambda_2, \lambda_3, \lambda_4)$$ tels que:
 
 $$
 \vec{i'} = \lambda_1 \vec{i} + \lambda_2 \vec{j} \\
 \vec{j'} = \lambda_3 \vec{i} + \lambda_4 \vec{j} 
 $$
 
-Dans ce cas, on peut donc substituer $$\vec{i'}$$ et $$\vec{j'}$$ dans $$(1)$$:
+On suppose qu'ils sont connus. Dans ce cas, on peut donc substituer $$\vec{i'}$$ et $$\vec{j'}$$ dans $$(1)$$:
 
 $$
 x' \vec{i'} + y' \vec{j'} \\
