@@ -77,8 +77,9 @@ angle de $$\alpha$$ entre $$\vec{i}$$ et $$\vec{i'}$$:
     <img src="/assets/imgs/rotation.svg" />
 </div>
 
-Dans ce nouveau repère, les coordonnées de $$P'$$ sont les mêmes que celles de $$P$$ dans le repère initial
-(avant que le point n'aie rotaté). On peut donc directement appliquer l'équation $$(2)$$:
+La rotation est une opération *linéaire*, c'est à dire qu'elle commute aux opérations sur les vecteurs.
+De ce fait, dans ce nouveau repère, les coordonnées de $$P'$$ sont les mêmes que celles de $$P$$ dans le
+repère initial (avant que le point n'aie rotaté).On peut donc directement appliquer l'équation $$(2)$$:
 
 $$
 \begin{cases}

@@ -11,25 +11,18 @@
  </defs>
  <defs>
   <font id="EmbeddedFont_1" horiz-adv-x="2048">
-   <font-face font-family="Liberation Serif embedded" units-per-em="2048" font-weight="normal" font-style="normal" ascent="1826" descent="450"/>
+   <font-face font-family="Liberation Serif embedded" units-per-em="2048" font-weight="normal" font-style="italic" ascent="1838" descent="435"/>
    <missing-glyph horiz-adv-x="2048" d="M 0,0 L 2047,0 2047,2047 0,2047 0,0 Z"/>
-   <glyph unicode="1" horiz-adv-x="742" d="M 627,80 L 901,53 901,0 180,0 180,53 455,80 455,1174 184,1077 184,1130 575,1352 627,1352 627,80 Z"/>
+   <glyph unicode="j" horiz-adv-x="775" d="M -59,-436 C -113,-436 -166,-426 -219,-406 L -186,-219 -139,-219 -124,-329 C -106,-347 -82,-356 -53,-356 -10,-356 25,-335 50,-292 75,-249 95,-182 111,-90 L 281,870 144,895 152,940 459,940 285,-39 C 261,-174 221,-273 165,-339 108,-403 34,-436 -59,-436 Z M 519,1247 C 519,1218 508,1192 487,1171 466,1150 440,1139 410,1139 381,1139 355,1150 334,1171 313,1192 302,1218 302,1247 302,1277 313,1303 334,1324 355,1345 381,1356 410,1356 440,1356 466,1345 487,1324 508,1303 519,1277 519,1247 Z"/>
+   <glyph unicode="i" horiz-adv-x="436" d="M 292,70 L 449,45 441,0 114,0 267,870 138,895 146,940 445,940 292,70 Z M 507,1247 C 507,1218 496,1192 475,1171 454,1150 428,1139 398,1139 369,1139 343,1150 322,1171 301,1192 290,1218 290,1247 290,1277 301,1303 322,1324 343,1345 369,1356 398,1356 428,1356 454,1345 475,1324 496,1303 507,1277 507,1247 Z"/>
+   <glyph unicode="O" horiz-adv-x="1355" d="M 1231,832 C 1231,965 1197,1073 1129,1154 1060,1235 970,1276 858,1276 759,1276 668,1242 585,1175 502,1107 434,1010 382,884 329,758 303,631 303,503 303,371 337,265 404,185 471,105 559,65 670,65 769,65 861,99 946,166 1030,233 1099,329 1152,455 1205,581 1231,707 1231,832 Z M 663,-20 C 556,-20 459,3 374,48 288,93 221,156 174,238 127,320 103,412 103,514 103,675 136,820 203,951 270,1081 361,1181 476,1251 591,1321 723,1356 871,1356 978,1356 1075,1334 1161,1289 1246,1244 1313,1180 1360,1099 1407,1017 1431,925 1431,822 1431,664 1398,519 1331,386 1264,253 1173,153 1058,84 943,15 811,-20 663,-20 Z"/>
   </font>
  </defs>
  <defs>
   <font id="EmbeddedFont_2" horiz-adv-x="2048">
-   <font-face font-family="Liberation Serif embedded" units-per-em="2048" font-weight="normal" font-style="italic" ascent="1826" descent="450"/>
+   <font-face font-family="OpenSymbol embedded" units-per-em="2048" font-weight="normal" font-style="normal" ascent="1427" descent="435"/>
    <missing-glyph horiz-adv-x="2048" d="M 0,0 L 2047,0 2047,2047 0,2047 0,0 Z"/>
-   <glyph unicode="y" horiz-adv-x="1112" d="M 52,940 L 308,940 453,208 688,614 C 731,689 752,753 752,807 752,832 745,851 731,866 717,881 702,890 686,895 L 694,940 884,940 C 901,925 910,904 910,877 910,824 882,751 827,657 L 431,-10 C 355,-139 295,-231 251,-285 206,-339 162,-379 119,-404 76,-429 29,-442 -22,-442 -76,-442 -126,-436 -171,-424 L -134,-221 -89,-221 -73,-317 C -56,-332 -29,-340 9,-340 99,-340 194,-250 294,-70 L 339,12 156,870 44,895 52,940 Z"/>
-   <glyph unicode="x" horiz-adv-x="927" d="M 142,84 C 142,65 156,52 184,45 L 176,0 -9,0 C -20,9 -25,23 -25,43 -25,62 -14,85 7,112 28,139 63,176 112,221 L 385,475 213,870 106,895 114,940 362,940 507,582 631,700 C 674,741 704,773 721,796 738,819 747,839 747,856 747,863 744,869 738,874 732,879 715,886 688,895 L 696,940 873,940 C 887,929 894,915 894,897 894,858 848,794 756,707 L 542,506 734,66 850,45 842,0 586,0 419,400 248,236 C 211,201 185,172 168,149 151,126 142,104 142,84 Z"/>
-   <glyph unicode="O" horiz-adv-x="1351" d="M 1231,832 C 1231,965 1197,1073 1129,1154 1060,1235 970,1276 858,1276 759,1276 668,1242 585,1175 502,1107 434,1010 382,884 329,758 303,631 303,503 303,371 337,265 404,185 471,105 559,65 670,65 769,65 861,99 946,166 1030,233 1099,329 1152,455 1205,581 1231,707 1231,832 Z M 663,-20 C 556,-20 459,3 374,48 288,93 221,156 174,238 127,320 103,412 103,514 103,675 136,820 203,951 270,1081 361,1181 476,1251 591,1321 723,1356 871,1356 978,1356 1075,1334 1161,1289 1246,1244 1313,1180 1360,1099 1407,1017 1431,925 1431,822 1431,664 1398,519 1331,386 1264,253 1173,153 1058,84 943,15 811,-20 663,-20 Z"/>
-  </font>
- </defs>
- <defs>
-  <font id="EmbeddedFont_3" horiz-adv-x="2048">
-   <font-face font-family="OpenSymbol embedded" units-per-em="2048" font-weight="normal" font-style="normal" ascent="1402" descent="450"/>
-   <missing-glyph horiz-adv-x="2048" d="M 0,0 L 2047,0 2047,2047 0,2047 0,0 Z"/>
-   <glyph unicode="⃗" horiz-adv-x="954" d="M 98,1313 L 98,1425 686,1425 645,1575 1026,1368 645,1163 686,1313 98,1313 Z"/>
+   <glyph unicode="⃗" horiz-adv-x="944" d="M 98,1313 L 98,1425 686,1425 645,1575 1026,1368 645,1163 686,1313 98,1313 Z"/>
   </font>
  </defs>
  <defs class="TextShapeIndex">
@@ -67,6 +60,7 @@
    <path d="M 173,740 C 173,903 231,1043 346,1159 462,1274 601,1332 765,1332 928,1332 1067,1274 1183,1159 1299,1043 1357,903 1357,740 1357,577 1299,437 1183,322 1067,206 928,148 765,148 601,148 462,206 346,322 231,437 173,577 173,740 Z"/>
   </g>
  </defs>
+ <defs class="TextEmbeddedBitmaps"/>
  <g>
   <g id="id2" class="Master_Slide">
    <g id="bg-id2" class="Background"/>
@@ -80,7 +74,7 @@
      <g class="Page">
       <g class="com.sun.star.drawing.LineShape">
        <g id="id3">
-        <rect class="BoundingBox" stroke="none" fill="none" x="2045" y="1891" width="1591" height="1946"/>
+        <rect class="BoundingBox" stroke="none" fill="none" x="2044" y="1892" width="1592" height="1945"/>
         <path fill="none" stroke="rgb(0,169,51)" stroke-width="53" stroke-linejoin="round" d="M 3608,3809 L 2298,2202"/>
         <path fill="rgb(0,169,51)" stroke="none" d="M 2045,1892 L 2201,2305 2418,2128 2045,1892 Z"/>
        </g>
@@ -95,8 +89,10 @@
       <g class="com.sun.star.drawing.CustomShape">
        <g id="id5">
         <rect class="BoundingBox" stroke="none" fill="none" x="3491" y="3705" width="210" height="210"/>
-        <path fill="rgb(224,194,205)" stroke="none" d="M 3699,3810 C 3699,3828 3694,3846 3685,3861 3676,3877 3663,3890 3647,3899 3632,3908 3614,3913 3596,3913 3577,3913 3559,3908 3544,3899 3528,3890 3515,3877 3506,3861 3497,3846 3492,3828 3492,3810 3492,3791 3497,3773 3506,3758 3515,3742 3528,3729 3544,3720 3559,3711 3577,3706 3596,3706 3614,3706 3632,3711 3647,3720 3663,3729 3676,3742 3685,3758 3694,3773 3699,3791 3699,3810 L 3699,3810 Z"/>
-        <path fill="none" stroke="rgb(161,70,126)" d="M 3699,3810 C 3699,3828 3694,3846 3685,3861 3676,3877 3663,3890 3647,3899 3632,3908 3614,3913 3596,3913 3577,3913 3559,3908 3544,3899 3528,3890 3515,3877 3506,3861 3497,3846 3492,3828 3492,3810 3492,3791 3497,3773 3506,3758 3515,3742 3528,3729 3544,3720 3559,3711 3577,3706 3596,3706 3614,3706 3632,3711 3647,3720 3663,3729 3676,3742 3685,3758 3694,3773 3699,3791 3699,3810 Z"/>
+        <path fill="rgb(224,194,205)" stroke="none" d="M 3594,3706 C 3652,3706 3697,3750 3697,3808 3697,3866 3652,3911 3594,3911 3536,3911 3492,3866 3492,3808 3492,3750 3536,3706 3594,3706 Z M 3492,3706 L 3492,3706 Z M 3699,3913 L 3699,3913 Z"/>
+        <path fill="none" stroke="rgb(161,70,126)" d="M 3594,3706 C 3652,3706 3697,3750 3697,3808 3697,3866 3652,3911 3594,3911 3536,3911 3492,3866 3492,3808 3492,3750 3536,3706 3594,3706 Z"/>
+        <path fill="none" stroke="rgb(161,70,126)" d="M 3492,3706 L 3492,3706 Z"/>
+        <path fill="none" stroke="rgb(161,70,126)" d="M 3699,3913 L 3699,3913 Z"/>
        </g>
       </g>
       <g class="com.sun.star.drawing.TextShape">
@@ -106,31 +102,29 @@
       </g>
       <g class="OLE2">
        <g id="id7">
-        <rect class="BoundingBox" stroke="none" fill="none" x="4718" y="2922" width="564" height="531"/>
+        <rect class="BoundingBox" stroke="none" fill="none" x="4718" y="2922" width="442" height="527"/>
         <defs>
          <clipPath id="clip_path_1" clipPathUnits="userSpaceOnUse">
-          <path d="M 4710,2910 L 5292,2910 5292,3440 4710,3440 4710,2910 Z"/>
+          <path d="M 4717,2927 L 5153,2927 5153,3459 4717,3459 4717,2927 Z"/>
          </clipPath>
         </defs>
         <g clip-path="url(#clip_path_1)">
-         <text class="TextShape"><tspan class="TextParagraph" font-family="OpenSymbol" font-size="422px" font-weight="400"><tspan class="TextPosition" x="4877" y="3292"><tspan fill="rgb(0,0,0)" stroke="none">⃗</tspan></tspan></tspan></text>
-         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Serif, serif" font-size="422px" font-style="italic" font-weight="400"><tspan class="TextPosition" x="4850" y="3292"><tspan fill="rgb(0,0,0)" stroke="none">x</tspan></tspan></tspan></text>
-         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Serif, serif" font-size="253px" font-weight="400"><tspan class="TextPosition" x="5062" y="3398"><tspan fill="rgb(0,0,0)" stroke="none">1</tspan></tspan></tspan></text>
+         <text class="TextShape"><tspan class="TextParagraph" font-family="OpenSymbol" font-size="422px" font-weight="400"><tspan class="TextPosition" x="4815" y="3261"><tspan fill="rgb(0,0,0)" stroke="none">⃗</tspan></tspan></tspan></text>
+         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Serif, serif" font-size="422px" font-style="italic" font-weight="400"><tspan class="TextPosition" x="4887" y="3357"><tspan fill="rgb(0,0,0)" stroke="none">i</tspan></tspan></tspan></text>
         </g>
        </g>
       </g>
       <g class="OLE2">
        <g id="id8">
-        <rect class="BoundingBox" stroke="none" fill="none" x="1945" y="2510" width="599" height="531"/>
+        <rect class="BoundingBox" stroke="none" fill="none" x="1945" y="2510" width="442" height="527"/>
         <defs>
          <clipPath id="clip_path_2" clipPathUnits="userSpaceOnUse">
-          <path d="M 1958,2514 L 2540,2514 2540,3043 1958,3043 1958,2514 Z"/>
+          <path d="M 1935,2516 L 2395,2516 2395,3048 1935,3048 1935,2516 Z"/>
          </clipPath>
         </defs>
         <g clip-path="url(#clip_path_2)">
-         <text class="TextShape"><tspan class="TextParagraph" font-family="OpenSymbol" font-size="422px" font-weight="400"><tspan class="TextPosition" x="2130" y="2880"><tspan fill="rgb(0,0,0)" stroke="none">⃗</tspan></tspan></tspan></text>
-         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Serif, serif" font-size="422px" font-style="italic" font-weight="400"><tspan class="TextPosition" x="2104" y="2880"><tspan fill="rgb(0,0,0)" stroke="none">y</tspan></tspan></tspan></text>
-         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Serif, serif" font-size="253px" font-weight="400"><tspan class="TextPosition" x="2315" y="2986"><tspan fill="rgb(0,0,0)" stroke="none">1</tspan></tspan></tspan></text>
+         <text class="TextShape"><tspan class="TextParagraph" font-family="OpenSymbol" font-size="422px" font-weight="400"><tspan class="TextPosition" x="2042" y="2849"><tspan fill="rgb(0,0,0)" stroke="none">⃗</tspan></tspan></tspan></text>
+         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Serif, serif" font-size="422px" font-style="italic" font-weight="400"><tspan class="TextPosition" x="2139" y="2945"><tspan fill="rgb(0,0,0)" stroke="none">j</tspan></tspan></tspan></text>
         </g>
        </g>
       </g>
@@ -139,7 +133,7 @@
         <rect class="BoundingBox" stroke="none" fill="none" x="3119" y="3897" width="518" height="471"/>
         <defs>
          <clipPath id="clip_path_3" clipPathUnits="userSpaceOnUse">
-          <path d="M 3122,3889 L 3625,3889 3625,4366 3122,4366 3122,3889 Z"/>
+          <path d="M 3121,3895 L 3629,3895 3629,4378 3121,4378 3121,3895 Z"/>
          </clipPath>
         </defs>
         <g clip-path="url(#clip_path_3)">
