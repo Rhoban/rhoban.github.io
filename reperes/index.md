@@ -22,5 +22,5 @@ et les changements de repères:
 * [Utilisations des repères](/reperes/utilisation)
 * [Rotations et transformations 3D](/reperes/3d)
 * [Modèle direct de robots articulaires](/reperes/kinematics)
-    * [TP Robot 6 axes](/reperes/tp_6axis)
 * [Implementation en Python (3D)](/reperes/python3d)
+    * [TP Robot 6 axes](/reperes/tp_6axis)

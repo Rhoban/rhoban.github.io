@@ -1,0 +1,6 @@
+{
+    "documentId": "9f651b6e59ebb4c089b451aa",
+    "outputFormat": "urdf",
+    "assemblyName": "Robot",
+    "useFixedLinks": true
+}
