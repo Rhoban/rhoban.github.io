@@ -140,7 +140,7 @@ des curseurs pour contrôler une cible en position et orientation.
 * Complétez la fonction `inverseTarget` afin qu'elle retourne la matrice complète,
 en appliquant le roulis, le tangage puis le lacet.
 
-Nous avons ainsi une matrice de transformation $M$ qui est une cible. Si on note $$\alpha$$ le
+Nous avons ainsi une matrice de transformation $$M$$ qui est une cible. Si on note $$\alpha$$ le
 vecteur des angles $$\alpha_i$$ des moteurs, notre objectif est de trouver le vecteur $$\alpha$$
 tel que le modèle direct du bras aie pour matrice $$M$$. Autrement dit, $$M = D(\alpha)$$. Le problème
 est que l'inversion de $$D$$ n'est pas un problème facile (voire possible) dans le cas général, nous
