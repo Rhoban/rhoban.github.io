@@ -1,5 +1,5 @@
 ---
-title: TP: A* et Value Iteration
+title: TP A* et Value Iteration
 layout: default
 permalink: /ia/tp_astar_value_iteration/
 ---
@@ -7,6 +7,8 @@ permalink: /ia/tp_astar_value_iteration/
 <div class="text-center m-2 float-end">
     <img src="/ia/imgs/demo.png" width="300" />
 </div>
+
+[&laquo; Retour au sommaire](/ia)
 
 Dans ce TP, l'objectif sera de guider un robot vers une case cible dans un monde "en grille". Nous implémenterons
 deux algorithmes: *A\** et *Value Iteration*
