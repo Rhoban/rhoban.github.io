@@ -12,6 +12,9 @@ parents = {}
 # Distance requise pour atteindre un noeud
 distances = {}
 
+# Etats déjà explorés
+explored = set()
+
 # La cible à atteindre, un tuple (x, y)
 target = None
 
@@ -25,7 +28,9 @@ def explore_node(grid, node):
     """
     On vient de découvrir un nouveau noeud
     """
-    global parents, distances, target
+    global parents, distances, target, explored
+
+    explored.add(node)
 
     # On regarde tous les mouvements possibles depuis ce noeud
     for move, next_state in world.possible_moves(grid, node[0], node[1]):
@@ -41,7 +46,8 @@ def find_next_node():
     minimum = None
 
     for node in distances:
-        if minimum is None or distances[node] + distance_estimation(node) < minimum[1]:
+        if node not in explored and \
+            (minimum is None or distances[node] + distance_estimation(node) < minimum[1]):
             minimum = node, distances[node]
 
     node = minimum[0]
