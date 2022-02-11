@@ -94,6 +94,8 @@ pour obtenir la meilleure action à chaque étape, et sur <kbd>world.apply_move<
 votre position.
 </div>
 
+Vous pourrez tester votre code avec `python simulator.py -m value`.
+
 # Bilan
 
 Expliquez la différence principale entre les deux algorithmes utilisés ici. Indiquez d'après vous dans quel
