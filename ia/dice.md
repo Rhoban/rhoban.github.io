@@ -10,7 +10,7 @@ L'objectif de ce tutoriel est d'implémenter l'algorithme de *value iteration* s
 voici le problème que nous allons résoudre:
 
 <div class="alert alert-secondary">
-    <div class="text-center float-end m-2" style="z-index:99999">
+    <div class="text-center float-end m-2">
         <img src="/ia/dice/dice.png" />
     </div>
     Un joueur lance un dé. Il a alors deux choix:

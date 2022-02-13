@@ -78,6 +78,12 @@ Vous pourrez tester votre code avec `python simulator.py -m a_star` (pensez à t
     pourquoi ?
 * Comment choisir cette valeur (ici `-100`) pour que l'algorithme fonctionne ?
 
+Faites tourner l'algorithme "à la main" sur un exemple comme celui-ci:
+
+<div class="text-center m-2">
+    <img src="/ia/imgs/gridworld.svg" />
+</div>
+
 Implémentez le code manquant dans `do_iterations`.
 
 <div class="alert alert-info">
