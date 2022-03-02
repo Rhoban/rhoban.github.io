@@ -12,6 +12,9 @@ parents = {}
 # Distance requise pour atteindre un noeud
 distances = {}
 
+# Etats déjà explorés
+explored = set()
+
 # La cible à atteindre, un tuple (x, y)
 target = None
 
@@ -25,28 +28,33 @@ def explore_node(grid, node):
     """
     On vient de découvrir un nouveau noeud
     """
-    global parents, distances, target
+    global parents, distances, target, explored
+
+    explored.add(node)
 
     # On regarde tous les mouvements possibles depuis ce noeud
     for move, next_state in world.possible_moves(grid, node[0], node[1]):
+        node_distance = distances[node] + 1
         # Si on peut atteindre un noeud qui n'a pas été exploré, on l'enregistre pour plus tard
-        if next_state not in parents:
+        if next_state not in distances or node_distance < distances[next_state]:
             parents[next_state] = [node, move]
-            distances[next_state] = distances[node] + 1
+            distances[next_state] = node_distance
 
 def find_next_node():
-    """
+    """ 
     Retourne le noeud ayant la plus petite distance dans la liste courrante
     """
     minimum = None
 
     for node in distances:
-        if minimum is None or distances[node] + distance_estimation(node) < minimum[1]:
-            minimum = node, distances[node]
+        score = distances[node] + distance_estimation(node)
+        if node not in explored and (minimum is None or score < minimum[1]):
+            minimum = node, score
 
-    node = minimum[0]
-
-    return node
+    if minimum is not None:
+        return minimum[0]
+    else:
+        return None
 
 def build_path(start):
     """
@@ -67,7 +75,6 @@ def solve(grid, start):
     # Initialisation, on place le premier noeud dans ceux à explorer
     target = world.get_target_position(grid)
     distances[start] = 0
-    explore_node(grid, start)
 
     while target not in distances:
         # TODO: Obtenir le prochain noeud à explorer et l'explorer

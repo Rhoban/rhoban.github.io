@@ -21,7 +21,8 @@ Chaque question de cette partie sont indépendantes.
 
 Le robot se situe en $$\begin{bmatrix} 17 \\ 22 \end{bmatrix}$$ dans le repère monde, son orientation est $$\alpha = 32 \deg$$. 
 Il voit le point $$P$$ dans son propre repère en $$\begin{bmatrix} -2 \\ 7 \end{bmatrix}$$.
-* **Où est le point $$P$$ dans le repère monde ?**
+
+*Où est le point $$P$$ dans le repère monde ?*
 
 ## Question 2
 
@@ -30,7 +31,7 @@ $$\alpha = 120 \deg$$, et il perçoit le point $$P$$ en $$\begin{bmatrix} 18 \\ 
 Ce point $$P$$ est connu pour se trouver dans le repère monde en $$\begin{bmatrix} -5 \\ 9 \end{bmatrix}$$
 (on peut imaginer que c'est un obstacle connu).
 
-* **Où se trouve le robot?**
+*Où se trouve le robot?*
 
 ## Question 3
 
@@ -38,7 +39,7 @@ Le point $$P$$ se situe en $$\begin{bmatrix} 5 \\ -2 \end{bmatrix}$$ dans le rep
 $$\begin{bmatrix} 8 \\ 3 \end{bmatrix}$$ dans le repère monde. Il avance tout droit (c'est à dire le long du
 vecteur $$\vec{i'}$$) et se retrouve en $$(9, 4$$).
 
-* **Où se situe le point $$P$$ dans le repère du robot ?**
+*Où se situe le point $$P$$ dans le repère du robot ?*
 
 ## Question 4
 
@@ -46,7 +47,7 @@ Le point $$P$$ se situe en $$\begin{bmatrix} 4 \\ 2 \end{bmatrix}$$ dans le rep�
 $$\begin{bmatrix} -4 \\ 8 \end{bmatrix}$$ et a une orientation de $$12 \deg$$ dans le repère monde. Le robot se déplace et arrive
 en $$\begin{bmatrix} -7 \\ 9 \end{bmatrix}$$ avec une orientation de $$14 \deg$$.
 
-* **Où est le point $$P$$ dans le repère robot à présent ?**
+*Où est le point $$P$$ dans le repère robot à présent ?*
 
 # Partie 2
 

@@ -1,0 +1,26 @@
+digraph {
+    node [textcolor="white", color="#ffaaaa",style="filled"]; throw; finish;
+    node [color="#aaaaff",style="filled"]; s1; s2; s3; s4; s5; s6; st;
+
+    s1 -> throw [label="-1", color="red", fontcolor="red"];
+    s2 -> throw [label="-1", color="red", fontcolor="red"];
+    s3 -> throw [label="-1", color="red", fontcolor="red"];
+    s4 -> throw [label="-1", color="red", fontcolor="red"];
+    s5 -> throw [label="-1", color="red", fontcolor="red"];
+    s6 -> throw [label="-1", color="red", fontcolor="red"];
+    s1 -> finish [label="1", color="red", fontcolor="red"];
+    s2 -> finish [label="2", color="red", fontcolor="red"];
+    s3 -> finish [label="3", color="red", fontcolor="red"];
+    s4 -> finish [label="4", color="red", fontcolor="red"];
+    s5 -> finish [label="5", color="red", fontcolor="red"];
+    s6 -> finish [label="6", color="red", fontcolor="red"];
+
+    throw -> s1 [label="1/6"];
+    throw -> s2 [label="1/6"];
+    throw -> s3 [label="1/6"];
+    throw -> s4 [label="1/6"];
+    throw -> s5 [label="/6"];
+    throw -> s6 [label="1/6"];
+
+    finish -> st [label="1"];
+}
