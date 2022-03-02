@@ -103,7 +103,7 @@ if __name__ == "__main__":
         motors_sliders = []
         for k in range(12):
             motors_sliders.append(p.addUserDebugParameter(
-                "motor_%d" % k, -3.14, 3.14, 0.))
+                "motor_%d" % k, -math.pi, math.pi, 0.))
     elif mode == 'inverse' or mode == 'direct':
         fixed = True
         startOrientation = [0., 0., math.pi + math.pi/4]
@@ -120,7 +120,6 @@ if __name__ == "__main__":
         leg2 = inverseControls('leg2_', -0.15, -0.15)
         leg3 = inverseControls('leg3_', 0.15, -0.15)
         leg4 = inverseControls('leg4_', 0.15, 0.15)
-
     elif mode == 'walk':
         speed_x = p.addUserDebugParameter('speed_x', -0.2, 0.2, 0.)
         speed_y = p.addUserDebugParameter('speed_y', -0.2, 0.2, 0.)
@@ -145,7 +144,8 @@ if __name__ == "__main__":
             beta = p.readUserDebugParameter(beta_slider)
             gamma = p.readUserDebugParameter(gamma_slider)
             joints = [alpha, beta, gamma] + [0]*9
-            p.resetBasePositionAndOrientation(target, control.direct(alpha, beta, gamma),
+            x, y, z = control.direct(alpha, beta, gamma)
+            p.resetBasePositionAndOrientation(target, [x, y, z + 0.1],
                 p.getQuaternionFromEuler([0, 0, 0]))
         elif mode == 'draw':
             joints = control.draw(t) + [0]*9

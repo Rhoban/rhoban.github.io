@@ -25,7 +25,7 @@ def direct(alpha, beta, gamma):
     """
     python simulator.py -m direct
 
-    Le robot est figé en l'air, on ne contrôle qu'une patte (le robot flotte à 0.1m au dessus du sol)
+    Le robot est figé en l'air, on ne contrôle qu'une patte
 
     Reçoit en argument la cible (alpha, beta, gamma) des degrés de liberté de la patte, et produit
     la position (x, y, z) atteinte par le bout de la patte
