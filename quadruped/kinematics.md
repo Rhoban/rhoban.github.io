@@ -62,8 +62,7 @@ def forward_kinematics(alpha, beta, gamma):
     return x, y, z
 ```
 
-Vous pouvez le tester sur divers exemples pour vérifier que les résultats sont cohérents avec ce que vous
-attendez.
+Adaptez ce code pour implémenter le mode `direct` du simulateur.
 
 # Implémentation du modèle inverse
 

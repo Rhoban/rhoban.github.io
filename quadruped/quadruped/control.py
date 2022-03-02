@@ -1,8 +1,6 @@
+import math
 import numpy as np
-if __package__ is None or __package__ == '':
-    import interpolation
-else:
-    from . import interpolation
+import interpolation
 
 def sandbox(t):
     """
@@ -23,6 +21,22 @@ def sandbox(t):
 
     return targets
 
+def direct(alpha, beta, gamma):
+    """
+    python simulator.py -m direct
+
+    Le robot est figé en l'air, on ne contrôle qu'une patte (le robot flotte à 0.1m au dessus du sol)
+
+    Reçoit en argument la cible (alpha, beta, gamma) des degrés de liberté de la patte, et produit
+    la position (x, y, z) atteinte par le bout de la patte
+
+    - Sliders: les angles des trois moteurs (alpha, beta, gamma)
+    - Entrées: alpha, beta, gamma, la cible (radians) des moteurs
+    - Sortie: un tableau contenant la position atteinte par le bout de la patte
+    """
+
+    return [0., 0., 0.]
+
 def inverse(x, y, z):
     """
     python simulator.py -m inverse
@@ -32,7 +46,7 @@ def inverse(x, y, z):
     Reçoit en argument une position cible (x, y, z) pour le bout de la patte, et produit les angles
     (alpha, beta, gamma) pour que la patte atteigne cet objectif
 
-    - Sliders: La position cible x, y, z du bout de la patte
+    - Sliders: la position cible x, y, z du bout de la patte
     - Entrée: x, y, z, une position cible dans le repère de la patte (mètres), provenant du slider
     - Sortie: un tableau contenant les 3 positions angulaires cibles (en radians)
     """
