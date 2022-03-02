@@ -32,7 +32,7 @@ def direct(alpha, beta, gamma):
 
     - Sliders: les angles des trois moteurs (alpha, beta, gamma)
     - Entrées: alpha, beta, gamma, la cible (radians) des moteurs
-    - Sortie: un tableau contenant la position atteinte par le bout de la patte
+    - Sortie: un tableau contenant la position atteinte par le bout de la patte (en mètres)
     """
 
     return [0., 0., 0.]
