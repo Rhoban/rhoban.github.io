@@ -68,7 +68,7 @@ $$c^2 = a^2 + b^2 - 2ab cos \gamma$$
 
 $$\gamma = arccos \frac{a^2 + b^2 - c^2}{2ab}$$
 
-Autrement dit, à partir du moment ou trois des six valeurs ($a$, $b$, $c$, $\alpha$, $\beta$, $\gamma$) sont connues, il est possible de retrouver toutes les autres.
+Autrement dit, à partir du moment ou trois des six valeurs ($$a$$, $$b$$, $$c$$, $$\alpha$$, $$\beta$$, $$\gamma$$) sont connues, il est possible de retrouver toutes les autres.
     
 * [Article Wikipédia "Loi des cosinus"](https://fr.wikipedia.org/wiki/Loi_des_cosinus)
 
