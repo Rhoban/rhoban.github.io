@@ -1,6 +1,5 @@
 import math
 import numpy as np
-import interpolation
 
 def sandbox(t):
     """
