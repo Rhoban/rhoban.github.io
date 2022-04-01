@@ -20,7 +20,7 @@ pip install numpy
 
 (testé sur python version 3.8.2)
 
-# Test
+# Prise en main
 
 ## Premier Test
 
@@ -68,3 +68,35 @@ A titre de comparaison, vous pouvez également lancer l'évaluation de la strat�
 ```
 python tetris.py --eval-random-policy
 ``` 
+
+# Value Iteration
+
+voir ici pour avoir la présentation de l'algoritme: https://rhoban.github.io/ia/dice_example
+
+Trouver une stratégie (une "policy") consiste à trouver une action pour toute configuration possible du jeu. C'est notre but.
+
+Le jeu est compliqué, et le nombre d'états possibles (*i.e.* de configurations) est a priori trop important pour être traité.
+
+C'est pourquoi, pour le traitement dans l'algorithme de Value Iteration, on considère une simplification de l'état qui consiste à ne pas prendre en compte tous les trous qu'il peut y avoir dans la construction, mais seulement la hauteur du trou le plus haut. Cela nous permet de diminuer le nombre d'état à considérer.
+
+Ainsi pour nous, un état du jeu à un moment donné consistera en
+- une ligne d'horizon, c'est-à-dire la crête de la construction.
+- la hauteur du plus haut trou dans la construction
+- la pièce à placer (il y en a 7 en tout)
+(Notez bien qu'il s'agit d'une simplification de la véritable configuration du jeu, codée dans la classe *Game*)
+
+
+Et les actions possibles consistent en
+- une rotation d'angle 0, 90, 180 ou 270°
+- une position latérale à laquelle on laisse tomber la pièce sur la construction. (voir la classe *Action* dans le fichier *kernel.py*)
+
+Chaque action sera codée par un entier (voir les méthodes *idx_of_action* et *action_of_idx*).
+De même les états seront également codés par des entiers (voir les méthodes *game_state_of_idx* et *idx_of_game_state*)
+
+Donc, notre but est de produire une stratégie, c'est à dire un (grand) tableau associant à chaque indice d'état, l'indice de l'action à faire dans cet état. 
+
+
+TODO: Détailler les outils
+
+
+Votre but est de produire la fonction *compute_value_and_policy* proposées dans le fichier *value_iteration.py*.
