@@ -1,5 +1,5 @@
 ---
-title: IA
+title: TP Tetris
 layout: default
 permalink: /ia/tp_tetris
 ---
