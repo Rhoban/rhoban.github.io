@@ -58,6 +58,14 @@ def inverseControls(name='', x_default=0.15, y_default=0.):
 
     return target_x, target_y, target_z, target
 
+def directControls():
+    alpha = p.addUserDebugParameter('alpha', -math.pi, math.pi, 0)
+    beta = p.addUserDebugParameter('beta', -math.pi, math.pi, 0)
+    gamma = p.addUserDebugParameter('gamma', -math.pi, math.pi, 0)
+    target = loadModel('target2', True)
+
+    return alpha, beta, gamma, target
+
 
 def inverseUpdate(controls):
     x = p.readUserDebugParameter(controls[0])
@@ -82,7 +90,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     mode = args.m
 
-    if mode not in ['motors', 'sandbox', 'inverse', 'draw', 'legs', 'walk']:
+    if mode not in ['motors', 'sandbox', 'direct', 'inverse', 'draw', 'legs', 'walk']:
         print('Le mode %s est inconnu' % mode)
         exit(1)
 
@@ -95,12 +103,12 @@ if __name__ == "__main__":
         motors_sliders = []
         for k in range(12):
             motors_sliders.append(p.addUserDebugParameter(
-                "motor_%d" % k, -3.14, 3.14, 0.))
-    elif mode == 'inverse':
+                "motor_%d" % k, -math.pi, math.pi, 0.))
+    elif mode == 'inverse' or mode == 'direct':
         fixed = True
         startOrientation = [0., 0., math.pi + math.pi/4]
         startPos = [-0.04, 0., 0.1]
-        leg = inverseControls()
+        leg = inverseControls() if mode == 'inverse' else directControls()
     elif mode == 'draw':
         fixed = True
         startOrientation = [0., 0., math.pi + math.pi/4]
@@ -112,7 +120,6 @@ if __name__ == "__main__":
         leg2 = inverseControls('leg2_', -0.15, -0.15)
         leg3 = inverseControls('leg3_', 0.15, -0.15)
         leg4 = inverseControls('leg4_', 0.15, 0.15)
-
     elif mode == 'walk':
         speed_x = p.addUserDebugParameter('speed_x', -0.2, 0.2, 0.)
         speed_y = p.addUserDebugParameter('speed_y', -0.2, 0.2, 0.)
@@ -131,6 +138,15 @@ if __name__ == "__main__":
                 joints.append(p.readUserDebugParameter(entry))
         elif mode == 'inverse':
             joints = control.inverse(*inverseUpdate(leg)) + [0]*9
+        elif mode == 'direct':
+            alpha_slider, beta_slider, gamma_slider, target = leg
+            alpha = p.readUserDebugParameter(alpha_slider)
+            beta = p.readUserDebugParameter(beta_slider)
+            gamma = p.readUserDebugParameter(gamma_slider)
+            joints = [alpha, beta, gamma] + [0]*9
+            x, y, z = control.direct(alpha, beta, gamma)
+            p.resetBasePositionAndOrientation(target, [x, y, z + 0.1],
+                p.getQuaternionFromEuler([0, 0, 0]))
         elif mode == 'draw':
             joints = control.draw(t) + [0]*9
 

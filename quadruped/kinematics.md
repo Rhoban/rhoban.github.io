@@ -6,27 +6,7 @@ permalink: /quadruped/kinematics
 
 [&laquo; Retour](/quadruped/)
 
-
-# Loi des cosinus
-
-Dans un triangle **quelconque**, dont les côtés mesurent $$a$$, $$b$$ et $$c$$ et les angles sont $$\alpha$$, $$\beta$$
-et $$\gamma$$, comme sur la figure suivante:
-
-<div class="text-center">
-<img src="/quadruped/img/al-kashi.svg" width=200>
-</div>
-
-Dans ce cas, on peut utiliser les égalités suivantes:
-
-$$c^2 = a^2 + b^2 - 2ab cos \gamma$$
-
-$$\gamma = arccos \frac{a^2 + b^2 - c^2}{2ab}$$
-
-Autrement dit, à partir du moment ou trois des six valeurs ($a$, $b$, $c$, $\alpha$, $\beta$, $\gamma$) sont connues, il est possible de retrouver toutes les autres.
-    
-* [Article Wikipédia "Loi des cosinus"](https://fr.wikipedia.org/wiki/Loi_des_cosinus)
-
-# Problème géométrique
+# Espace articulaire et espace opérationnel
 
 Soit un robot à trois degrés de liberté:
 
@@ -36,12 +16,21 @@ Soit un robot à trois degrés de liberté:
 
 $$l_1 = 45 mm, l_2 = 65 mm, l_3 = 87 mm$$
 
-L'objectif est de déterminer $$\alpha$$, $$\beta$$ et $$\gamma$$ afin d'atteindre une position $$x$$, $$y$$, $$z$$
-donnée.
+* Les coordonnées $$(x, y, z)$$ du bout de la patte représentent **l'espace opérationnel**: celui dans lequel on
+veut travailler
+* Les coordonnées $$(\alpha, \beta, \gamma)$$ représentent **l'espace articulaire**: correspondant directement
+aux degrés de liberté du robot (par construction)
 
-# Modèle direct
+<div class="alert alert-info">
+    <b>Question</b>: comment passer d'un espace à un autre ?
+</div>
 
-Le code suivant résout le problème inverse. Il produit la position $$x$$, $$y$$, $$z$$ à partir des angles
+* Passer de l'espace articulaire à l'espace opérationnel est ce qu'on appelle le **modèle géométrique direct** du robot,
+* Passer de l'espace opérationnel à l'espace articulaire est le **modèle géométrique inverse**..
+
+# Modèle géométrique direct
+
+Le code suivant résout le problème du modèle direct. Il produit la position $$x$$, $$y$$, $$z$$ à partir des angles
 moteurs:
 
 ```python
@@ -62,10 +51,28 @@ def forward_kinematics(alpha, beta, gamma):
     return x, y, z
 ```
 
-Vous pouvez le tester sur divers exemples pour vérifier que les résultats sont cohérents avec ce que vous
-attendez.
+Adaptez ce code pour implémenter le mode `direct` du simulateur.
 
-# Implémentation du modèle inverse
+# Loi des cosinus
+
+Dans un triangle **quelconque**, dont les côtés mesurent $$a$$, $$b$$ et $$c$$ et les angles sont $$\alpha$$, $$\beta$$
+et $$\gamma$$, comme sur la figure suivante:
+
+<div class="text-center">
+<img src="/quadruped/img/al-kashi.svg" width=200>
+</div>
+
+Dans ce cas, on peut utiliser les égalités suivantes:
+
+$$c^2 = a^2 + b^2 - 2ab cos \gamma$$
+
+$$\gamma = arccos \frac{a^2 + b^2 - c^2}{2ab}$$
+
+Autrement dit, à partir du moment ou trois des six valeurs ($$a$$, $$b$$, $$c$$, $$\alpha$$, $$\beta$$, $$\gamma$$) sont connues, il est possible de retrouver toutes les autres.
+    
+* [Article Wikipédia "Loi des cosinus"](https://fr.wikipedia.org/wiki/Loi_des_cosinus)
+
+# Modèle géométrique inverse
 
 Il faut maintenant résoudre le problème inverse de manière analytique. Nous le ferons ensemble pendant le cours
 et donnerons une correction au tableau.
