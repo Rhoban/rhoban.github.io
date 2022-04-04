@@ -71,7 +71,7 @@ python tetris.py --eval-random-policy
 
 # Value Iteration
 
-voir ici pour avoir la présentation de l'algoritme: https://rhoban.github.io/ia/dice_example
+voir ici pour avoir la présentation de l'algoritme: [Value Iteration](/ia/dice_example)
 
 Trouver une stratégie (une "policy") consiste à trouver une action pour toute configuration possible du jeu. C'est notre but.
 
@@ -96,7 +96,7 @@ De même les états seront également codés par des entiers (voir les méthodes
 Donc, notre but est de produire une stratégie, c'est à dire un (grand) tableau associant à chaque indice d'état, l'indice de l'action à faire dans cet état. 
 
 **Votre but est de produire la fonction *compute_value_and_policy*** dont le prototype est proposé dans le fichier *value_iteration.py*.
-Cette fonction devra retourner un couple *V,policy* ou *V* est un tableau donnant la fonction de valeur (utilisée dans Value Iteration) pour chaque état, et *policy* est également un tableau donnant la stratégie (cf. https://rhoban.github.io/ia/dice_example).
+Cette fonction devra retourner un couple *V, policy* ou *V* est un tableau donnant la fonction de valeur (utilisée dans Value Iteration) pour chaque état, et *policy* est également un tableau donnant la stratégie (cf. [Value Iteration](/ia/dice_example)).
 
 Actuellement, vous disposez du fichier *data/value_and_policy_6_6.pickle* qui propose une stratégie. Le fichier est chargé automatiquement (inspectez le code de *test_policy* ou de *eval_policy*). Ce fichier a été produit par une version de l'algorithme dont vous ne disposez pas (il faut justement que vous écriviez la fonction *compute_value_and_policy*).
 
@@ -105,6 +105,10 @@ Vous pourrez vous appuyer sur la fonction
 Pour tout état *s* et pour toute action *a*, *transitions[s,a]* contient l'indice d'un état *s'* produit à partir de l'état *s* avec l'action *a*. Remarquons que cet état contient lui même une pièce courante "à placer", c'est un élément aléatoire de cet état *s'*.
 Par ailleurs, *scores[s,a]* contient le différentiel de score entre l'état *s* et l'état *s'*, c'est-à-dire le nombre de lignes produites par l'action *a* sur *s*.
 
-Remarquons que le *s'* de la description de l'algorithme de https://rhoban.github.io/ia/dice_example parcourt tous les successeurs de *s*. On pourra l'obtenir en faisant varier la piece courante de *s'* (on utilise la fonction *modify_current_piece_in_idx(s, p)* du fichier *kernel.py*). Cela est illustré par les fonctions *compute_successors(transitions, s, a)* et *compute_successor_matrix(transitions)* dont vous disposez.
+Remarquons que le *s'* de la description de l'algorithme de [Value Iteration](/ia/dice_example) parcourt tous les successeurs de *s*. On pourra l'obtenir en faisant varier la piece courante de *s'* (on utilise la fonction *modify_current_piece_in_idx(s, p)* du fichier *kernel.py*). Cela est illustré par les fonctions *compute_successors(transitions, s, a)* et *compute_successor_matrix(transitions)* dont vous disposez.
 
 Enfin, vous aurez besoin de la fonction récompense *compute_reward_matrix(scores)* qu'il vous faudra construire. Sans surprise, elle sera basée sur les scores.
+
+# En résumé
+
+Votre mission est de produire la fonction *compute_value_and_policy* de telle sorte que la commande `python tetris.py --5x5 --eval-policy` (`5x5` pourra être remplacée par `4x4` ou `6x6`) produise une moyenne de score la plus élevée possible.
