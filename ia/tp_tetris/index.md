@@ -102,9 +102,9 @@ Actuellement, vous disposez du fichier *data/value_and_policy_6_6.pickle* qui pr
 
 Vous pourrez vous appuyer sur la fonction
 *compute_transition_matrix()*, disponible dans le fichier *value_iteration.py*. Cette fonction calcule 2 matrices. L'une pour les transitions (notée *transitions*), l'autre pour les score (notée *scores*). La matrice comporte en ligne les états (simplifiés) du jeu, et en colonne les actions (on parle des indices).
-Pour tout état $s$ et pour toute action $a$, *transitions[s,a]* contient l'indice d'un état $s'$ produit à partir de l'état *s* avec l'action *a*. Remarquons que cet état contient lui même une pièce courante "à placer", c'est un élément aléatoire de cet état $s'$.
-Par ailleurs, *scores[s,a]* contient le différentiel de score entre l'état $s$ et l'état $s'$, c'est-à-dire le nombre de lignes produites par l'action $a$ sur $s$.
+Pour tout état *s* et pour toute action *a*, *transitions[s,a]* contient l'indice d'un état *s'* produit à partir de l'état *s* avec l'action *a*. Remarquons que cet état contient lui même une pièce courante "à placer", c'est un élément aléatoire de cet état *s'*.
+Par ailleurs, *scores[s,a]* contient le différentiel de score entre l'état *s* et l'état *s'*, c'est-à-dire le nombre de lignes produites par l'action *a* sur *s*.
 
-Remarquons que le $s'$ de la description de l'algorithme de https://rhoban.github.io/ia/dice_example parcourt tous les successeurs de $s$. On pourra l'obtenir en faisant varier la piece courante de $s'$ (on utilise la fonction *modify_current_piece_in_idx(s, p)* du fichier *kernel.py*). Cela est illustré par les fonctions *compute_successors(transitions, s, a)* et *compute_successor_matrix(transitions)* dont vous disposez.
+Remarquons que le *s'* de la description de l'algorithme de https://rhoban.github.io/ia/dice_example parcourt tous les successeurs de *s*. On pourra l'obtenir en faisant varier la piece courante de *s'* (on utilise la fonction *modify_current_piece_in_idx(s, p)* du fichier *kernel.py*). Cela est illustré par les fonctions *compute_successors(transitions, s, a)* et *compute_successor_matrix(transitions)* dont vous disposez.
 
 Enfin, vous aurez besoin de la fonction récompense *compute_reward_matrix(scores)* qu'il vous faudra construire. Sans surprise, elle sera basée sur les scores.
