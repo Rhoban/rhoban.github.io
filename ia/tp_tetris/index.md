@@ -69,6 +69,11 @@ A titre de comparaison, vous pouvez également lancer l'évaluation de la strat�
 python tetris.py --eval-random-policy
 ``` 
 
+A noter que vous pouvez tester le jeu avec:
+```
+python tetris.py --6x6 --user-game
+``` 
+
 # Value Iteration
 
 voir ici pour avoir la présentation de l'algoritme: [Value Iteration](/ia/dice_example)
