@@ -294,6 +294,18 @@ de $$P$$ à la bordure du demi-plan:
 
 On peut donc trouver $$AP' = \vec{u} (\vec{u} \cdot \vec{AP})$$
 
+**Tester si deux vecteurs sont orthogonaux**
+
+On peut tester si deux vecteurs sont orthogonaux, en vérifiant que:
+
+$$\vec{u} \cdot \vec{v} = 0$$
+
+**Tester si trois points sont alignés**
+
+On peut tester si trois points $$A, B$$ et $$C$$ sont alignés en vérifiant que:
+
+$$\vec{AB} \cdot \vec{AC} = \lVert \vec{AB} \rVert \lVert \vec{AC} \rVert$$
+
 <hr/>
 
 Dans la partie suivante, nous parlerons des [changements de repères](/reperes/changements)
