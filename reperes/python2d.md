@@ -105,17 +105,17 @@ def rotation(alpha):
                      [np.sin(alpha),  np.cos(alpha), 0.],
                      [           0.,             0., 1.]])
 
-def translation(t):
-    return np.array([[1., 0., t[0]],
-                     [0., 1., t[1]],
+def translation(x, y):
+    return np.array([[1., 0., x],
+                     [0., 1., y],
                      [0., 0., 1.]])
 ```
 
 Et le changement de repère:
 
 ```python
-def frame(alpha, t):
-    return translation(t) @ rotation(alpha)
+def frame(alpha, x, y):
+    return translation(x, y) @ rotation(alpha)
 ```
 
 En utilisant la formule vue dans [la partie matricielle](/reperes/matrix), on peut également

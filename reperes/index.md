@@ -18,6 +18,7 @@ et les changements de repères:
 * [Notations matricielles et coordonnées homogènes](/reperes/matrix)
 * [Implementation en Python (2D)](/reperes/python2d)
     * [Exercices](/reperes/ex_reperes)
+    * [TP "Porte"](/reperes/tp_door)
     * [TP Robot 2D](/reperes/tp_2d)
 * [Utilisations des repères](/reperes/utilisation)
 * [Rotations et transformations 3D](/reperes/3d)
