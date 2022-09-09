@@ -7,7 +7,7 @@ from transforms3d.quaternions import mat2quat, quat2mat
 import pybullet as p
 import pygame
 import argparse
-import model_correction as model
+import model
 
 sim = simulation.Simulation('6axis/robot.urdf', fixed=True, panels=True)
 parser = argparse.ArgumentParser()
