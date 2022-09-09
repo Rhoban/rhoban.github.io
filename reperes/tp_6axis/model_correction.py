@@ -1,41 +1,37 @@
-import math
 import time
 from scipy.optimize import minimize
 import numpy as np
 
-def Rz(alpha):
-    return np.array([[math.cos(alpha), -math.sin(alpha), 0., 0.],
-                      [math.sin(alpha), math.cos(alpha), 0., 0.],
-                      [0., 0., 1., 0.],
-                      [0., 0., 0., 1.]])
+def translation(x, y, z):
+    return np.array([[1, 0, 0, x],
+                     [0, 1, 0, y],
+                     [0, 0, 1, z],
+                     [0, 0, 0, 1]])
 
 def Rx(alpha):
-    return np.array([[1., 0., 0., 0.],
-                      [0., math.cos(alpha), -math.sin(alpha), 0.],
-                      [0., math.sin(alpha), math.cos(alpha), 0.],
-                      [0., 0., 0., 1.]])
+    return np.array([[1, 0, 0, 0],
+                     [0, np.cos(alpha), -np.sin(alpha), 0],
+                     [0, np.sin(alpha), np.cos(alpha), 0],
+                     [0, 0, 0, 1]])
 
 def Ry(alpha):
-    return np.array([[math.cos(alpha), 0., math.sin(alpha), 0.],
-                      [0., 1., 0., 0.],
-                      [-math.sin(alpha), 0., math.cos(alpha), 0.],
-                      [0., 0., 0., 1.]])
+    return np.array([[np.cos(alpha), 0, np.sin(alpha), 0],
+                     [0, 1, 0, 0],
+                     [-np.sin(alpha), 0, np.cos(alpha), 0],
+                     [0, 0, 0, 1]])
+        
+def Rz(alpha):
+    return np.array([[np.cos(alpha), -np.sin(alpha), 0, 0],
+                     [np.sin(alpha), np.cos(alpha), 0, 0],
+                     [0, 0, 1, 0],
+                     [0, 0, 0, 1]])
 
-def T(x, y, z, multiplier=1000.0):
-    return np.array([[1., 0., 0., x/multiplier],
-                      [0., 1., 0., y/multiplier],
-                      [0., 0., 1., z/multiplier],
-                      [0., 0., 0., 1.]])
-
-def inv(M):
-    R = M[0:3, 0:3]
-    T = M.T[3,:3]
-    
-    Mi = M.copy()
-    Mi[0:3, 0:3] = R.T
-    Mi.T[3, :3] = (-R.T.dot(T.T))
-
-    return Mi
+def frame_inv(T):
+    R = T[:3, :3] # On extrait la rotation
+    t = T[:3, 3:] # On extrait la translation
+    upper = np.hstack((R.T, -R.T @ t))
+    lower = np.array([0., 0., 0., 1.])
+    return np.vstack((upper, lower))
 
 def direct(angles):
     """
@@ -44,16 +40,20 @@ def direct(angles):
         repère du monde.
     """
 
-    M = np.eye(4)
-    M = Rx(-angles['motor6']).dot(T(10.0, 0, 0))
-    M = Ry(angles['motor5']).dot(T(285.0, 0, 0).dot(M))
-    M = Rx(-angles['motor4']).dot(T(230.0, 0, 0).dot(M))
-    M = Ry(-angles['motor3']).dot(T(105.0, 0, 0).dot(M))
-    M = Ry(angles['motor2']).dot(T(0.0, 0, 275.0).dot(M))
-    M = Rz(-angles['motor1']).dot(T(0.0, 0, 105.0).dot(M))
-    M = T(0.0, 0.0, 45.0).dot(M)
+    T = np.eye(4)
+    T = T @ Rz(angles[0])
+    T = T @ translation(0.32, 0, 0.68)
+    T = T @ Ry(angles[1])
+    T = T @ translation(0, 0, 0.975)
+    T = T @ Ry(angles[2])
+    T = T @ translation(0, 0, 0.2)
+    T = T @ Rx(angles[3])
+    T = T @ translation(0.887, 0, 0)
+    T = T @ Ry(angles[4])
+    T = T @ translation(0.2, 0, 0)
+    T = T @ Rx(angles[5])
 
-    return M
+    return T
 
 def intersectFloor(P, V):
     Z = P[2]
@@ -72,9 +72,9 @@ def laser(angles):
         Retourne None si le laser ne touche pas le sol.
     """
 
-    M = direct(angles)
-    P = M.dot(np.array([0., 0., 0., 1.]).T)
-    V = M.dot(np.array([1., 0., 0., 1.]).T) - P
+    T_world_effector = direct(angles)
+    P = T_world_effector @ [0., 0., 0., 1.]
+    V = (T_world_effector @ [1., 0., 0., 1.]) - P
 
     return intersectFloor(P, V)
 
@@ -86,15 +86,19 @@ def camera(angles, target, imgSize, aperture):
         Retourne la position de la cible dans l'image de la caméra, ainsi que sa taille
         (rayon, en pixels).
     """
-    M = direct(angles)
-    targetInCameraFrame = inv(M).dot(np.array([target[0], target[1], target[2], 1]).T)
+    T_world_effector = direct(angles)
+    T_effector_world = frame_inv(T_world_effector)
+    target_world = [target[0], target[1], target[2], 1]
+
+    # Expressing the target in the camera frame
+    target_camera = T_effector_world @ target_world
 
     focale = (imgSize/2)/(aperture/2.0)
 
-    x = -targetInCameraFrame[1] * focale/targetInCameraFrame[0]
-    y = targetInCameraFrame[2] * focale/targetInCameraFrame[0]
+    x = -target_camera[1] * focale/target_camera[0]
+    y = target_camera[2] * focale/target_camera[0]
 
-    r = max(1, ((targetInCameraFrame[2] + 0.042) * focale/targetInCameraFrame[0]) - y)
+    r = max(1, ((target_camera[2] + 0.042) * focale/target_camera[0]) - y)
 
     return [x, y, r]
 
@@ -104,14 +108,14 @@ def camera2(angles, aperture):
     de l'image projetés à 2m, sauf si ils intersectent le sol
     """
 
-    M = direct(angles)
-    P = M.dot(np.array([0., 0., 0., 1.]).T)
+    T_world_effector = direct(angles)
+    P = T_world_effector @ [0., 0., 0., 1.]
     
-    delta = (math.tan(aperture/2))*2
-    V1 = M.dot(np.array([2., delta, delta, 1.]).T)
-    V2 = M.dot(np.array([2., delta, -delta, 1.]).T)
-    V3 = M.dot(np.array([2., -delta, -delta, 1.]).T)
-    V4 = M.dot(np.array([2., -delta, delta, 1.]).T)
+    delta = (np.tan(aperture/2))*2
+    V1 = T_world_effector @ [2., delta, delta, 1.]
+    V2 = T_world_effector @ [2., delta, -delta, 1.]
+    V3 = T_world_effector @ [2., -delta, -delta, 1.]
+    V4 = T_world_effector @ [2., -delta, delta, 1.]
 
     res = [V1, V2, V3, V4]
     for k in range(len(res)):
@@ -124,30 +128,28 @@ def camera2(angles, aperture):
     return res
 
 def inverseTarget(x, y, z, yaw, pitch, roll):
-    M = T(x,y,z,multiplier=1.).dot(Rz(yaw).dot(Ry(pitch).dot(Rx(roll))))
+    M = translation(x,y,z) @ Rz(yaw) @ Ry(pitch) @ Rx(roll)
 
     return M
 
-def points(M):
-    P = M.dot(np.array([0., 0., 0., 1.]).T)[:3]
-    P1 = M.dot(np.array([0.1, 0., 0., 1.]).T)[:3]
-    P2 = M.dot(np.array([0., 0.1, 0., 1.]).T)[:3]
-    P3 = M.dot(np.array([0., 0., 0.1, 1.]).T)[:3]
+def points(T_world_effector):
+    P = (T_world_effector @ [0., 0., 0., 1.])[:3]
+    P1 = (T_world_effector @ [0.1, 0., 0., 1.])[:3]
+    P2 = (T_world_effector @ [0., 0.1, 0., 1.])[:3]
+    P3 = (T_world_effector @ [0., 0., 0.1, 1.])[:3]
 
     return [P, P1, P2, P3]
 
 def inverse(targets, x, y, z, yaw, pitch, roll):
-    M = inverseTarget(x, y, z, yaw, pitch, roll)
-    targetPoints = points(M)
+    T_world_effector = inverseTarget(x, y, z, yaw, pitch, roll)
+    targetPoints = points(T_world_effector)
 
     def inverseScore(X):
-        joints = {'motor'+str(k+1): X[k] for k in range(6)}
-        currentPoints = points(direct(joints))
+        currentPoints = points(direct(X))
         return sum([np.linalg.norm(targetPoints[k] - currentPoints[k]) for k in range(len(currentPoints))])
 
-    X = [targets[x] for x in targets]
     s = time.time()
-    Y = minimize(inverseScore, X, method='Nelder-Mead', options={'fatol': 0.001})
+    Y = minimize(inverseScore, targets, method='Nelder-Mead', options={'fatol': 0.001})
 
-    return {'motor'+str(k+1): Y.x[k] for k in range(6)}
+    return Y.x
 

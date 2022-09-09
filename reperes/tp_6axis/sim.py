@@ -7,7 +7,7 @@ from transforms3d.quaternions import mat2quat, quat2mat
 import pybullet as p
 import pygame
 import argparse
-import model
+import model_correction as model
 
 sim = simulation.Simulation('6axis/robot.urdf', fixed=True, panels=True)
 parser = argparse.ArgumentParser()
@@ -34,9 +34,9 @@ elif args.mode == 'camera' or args.mode == 'camera2':
 
 joints = sim.getJoints()
 if args.mode == 'inverse':
-    sliders['target_x'] = p.addUserDebugParameter('target_x', -2, 2, 0.63)
+    sliders['target_x'] = p.addUserDebugParameter('target_x', -2, 2, 1.5)
     sliders['target_y'] = p.addUserDebugParameter('target_y', -2, 2, 0)
-    sliders['target_z'] = p.addUserDebugParameter('target_z', -2, 2, 0.425)
+    sliders['target_z'] = p.addUserDebugParameter('target_z', 0, 2, 1)
     sliders['target_yaw'] = p.addUserDebugParameter('target_yaw', -math.pi, math.pi, 0)
     sliders['target_pitch'] = p.addUserDebugParameter('target_pitch', -math.pi, math.pi, 0)
     sliders['target_roll'] = p.addUserDebugParameter('target_roll', -math.pi, math.pi, 0)
@@ -48,7 +48,7 @@ else:
     
 lastLine = time.time()
 lastInverse = 0
-targets = {'motor'+str(k+1): 0 for k in range(6)}
+targets = {'r'+str(k+1): 0 for k in range(6)}
 
 while True:
     if sim.t > 1.0:
@@ -59,16 +59,16 @@ while True:
                 targets[joint] = p.readUserDebugParameter(sliders[joint])
 
         if args.mode == 'direct':
-            m = model.direct(targets)
+            m = model.direct(list(targets.values()))
             R = m[0:3,0:3]
             T = m.T[3,:3]
             Q = mat2quat(R)
             p.resetBasePositionAndOrientation(target, list(T), [Q[1], Q[2], Q[3], Q[0]])
             
         elif args.mode == 'laser':
-            pos = model.laser(targets)
+            pos = model.laser(list(targets.values()))
             if pos is not None:
-                m = model.direct(targets)
+                m = model.direct(list(targets.values()))
                 T = m.T[3,:3]
                 p.resetBasePositionAndOrientation(target, [pos[0], pos[1], 0.0], [0, 0, 0, 1])
 
@@ -83,7 +83,7 @@ while True:
             aperture = p.readUserDebugParameter(sliders['aperture'])
             pos = [target_x, target_y, target_z]
             p.resetBasePositionAndOrientation(target, pos, [0, 0, 0, 1])
-            view = model.camera(targets, pos, imgSize, np.deg2rad(aperture))
+            view = model.camera(list(targets.values()), pos, imgSize, np.deg2rad(aperture))
             
             window.fill((200, 200, 200))
             pygame.draw.line(window, (150,150,150), (imgSize/2,0), (imgSize/2,imgSize), 1)
@@ -93,10 +93,10 @@ while True:
 
             if args.mode == 'camera2' and time.time() - lastLine > 0.5:
                 lastLine = time.time()
-                corners = model.camera2(targets, np.deg2rad(aperture))
+                corners = model.camera2(list(targets.values()), np.deg2rad(aperture))
                 for corner in corners:
                     if corner is not None:
-                        m = model.direct(targets)
+                        m = model.direct(list(targets.values()))
                         T = m.T[3,:3]
                         p.addUserDebugLine(list(T), list(corner), [0.0, 0.0, 1.0], 1, 0.55)
                 attach = ((0,1), (1,2), (2,3), (3,0))
@@ -120,8 +120,9 @@ while True:
 
             if (time.time() - lastInverse) > 0.05:
                 lastInverse = time.time()
-                targets = model.inverse(targets, x, y, z, yaw, pitch, roll)
+                values = model.inverse(list(targets.values()), x, y, z, yaw, pitch, roll)
+                targets = {'r'+str(k+1): values[k] for k in range(6)}
 
-        sim.setJoints(targets)
+        sim.resetJoints(targets)
 
     sim.tick()

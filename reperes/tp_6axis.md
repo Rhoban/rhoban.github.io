@@ -44,11 +44,11 @@ du bras robotique.
 
 # Dimensions
 
-Les dimensions du bras sont indiquées ici, ou dans le fichier [drawing.pdf](/reperes/tp_6axis/drawing.pdf)
+Les dimensions du bras sont indiquées ici, ou dans le fichier **drawing.png**
 de l'archive:
 
 <div class="text-center m-2">
-    <img src="/assets/imgs/6axis_drawing.png" class="responsive" />
+    <a href="/assets/imgs/6axis_drawing.png"><img src="/assets/imgs/6axis_drawing.png" class="responsive" width="600" /></a>
 </div>
 
 # 1. Modèle géométrique direct
@@ -92,44 +92,7 @@ marqueur au sol apparaître. Ce dernier est le résultat de l'appel à `laser(an
 Implémentez la méthode `laser` qui calcule la position du laser au sol en fonction de la
 position des moteurs.
 
-# 3. Une caméra
-
-Supposons qu'une caméra soit accrochée au bout du bras du robot. On souhaite savoir comment un point
-$$P$$ se projette dans l'image de la caméra. Pour ce faire, on calcule tout d'abord la position du point
-dans le repère de la caméra (cf figure ci-dessous), que l'on nomme $$x_P, y_P, z_P$$.
-
-Ensuite, on projette ce point dans le plan $$J$$, définit par une distance focale $$f$$ au centre optique
-de la caméra $$C$$. Notre écran étant virtuel, le nombre de pixels par mètre peut être défini arbitrairement
-(par exemple $$1$$). (Ce modèle classique se nomme [Pinhole camera model](https://en.wikipedia.org/wiki/Pinhole_camera_model)).
-
-<div class="text-center m-2">
-    <img src="/assets/imgs/camera.svg" width="300" />
-</div>
-
-La caméra que nous allons simuler ici produit une image carrée de $$w \times w$$ pixels, et elle sera caractérisée
-par son angle d'ouverture $$\alpha$$.
-
-* Exprimez la distance focale $$f$$ en fonction de $$w$$ et $$\alpha$$
-* À partir de la position d'un point connue dans le repère du monde, comment connaître la position de
-ce point dans le repère de l'effecteur (et donc ici de la caméra)?
-* Comment calculer la taille (en pixels) d'une sphère de rayon connu $$r$$ (mètres) dans l'image?
-* Implémentez la fonction `camera` dans `model.py`. Cette fonction reçoit en paramètre les angles du bras robotique,
-la position de la cible que vous pouvez déplacer en 3D à l'aide des curseurs, la taille de l'image en pixels, et
-l'angle d'ouverture de la caméra (également changeable à l'aide des curseurs).
-La fonction retourne la position de la balle dans l'image ($$0,0$$ étant le centre de l'image)
-ainsi que sa taille (un rayon en pixels). La cible a un rayon de $$42mm$$.
-    * En lançant le programme avec `python sim.py -m camera`, la fonction sera appelée et
-        le résultat sera dessiné dans une autre fenêtre
-* Implémentez la fonction `camera2`, qui retourne la position des coins de l'image qui serait sur
-un écran situé à 2m, sauf si ce faisceau intersecte le sol.
-    * Pour tester, lancez le programme avec `python sim.py -m camera2`.
-     Le résultat final doit ressembler à la figure ci-dessous.
-
-<div class="text-center m-2">
-    <img src="/assets/imgs/camera2.png" width="300" />
-</div>
-
-# 4. Modèle géométrique inverse itératif
+# 3. Modèle géométrique inverse itératif
 
 Dans cette partie, nous allons contrôler le bras robotique à l'aide d'une cible en position et
 en orientation.
@@ -171,3 +134,41 @@ angles ainsi que la position et l'orientation cible donnés par les sliders. L'o
 méthode est de trouver des angles permettant d'atteindre cette position et cette orientation
 en s'appuyant sur la fonction de score expliquée ci-dessus et sur `scipy.minimize`
 pour trouver le meilleur candidat.
+
+
+# 4. Une caméra
+
+Supposons qu'une caméra soit accrochée au bout du bras du robot. On souhaite savoir comment un point
+$$P$$ se projette dans l'image de la caméra. Pour ce faire, on calcule tout d'abord la position du point
+dans le repère de la caméra (cf figure ci-dessous), que l'on nomme $$x_P, y_P, z_P$$.
+
+Ensuite, on projette ce point dans le plan $$J$$, définit par une distance focale $$f$$ au centre optique
+de la caméra $$C$$. Notre écran étant virtuel, le nombre de pixels par mètre peut être défini arbitrairement
+(par exemple $$1$$). (Ce modèle classique se nomme [Pinhole camera model](https://en.wikipedia.org/wiki/Pinhole_camera_model)).
+
+<div class="text-center m-2">
+    <img src="/assets/imgs/camera.svg" width="300" />
+</div>
+
+La caméra que nous allons simuler ici produit une image carrée de $$w \times w$$ pixels, et elle sera caractérisée
+par son angle d'ouverture $$\alpha$$.
+
+* Exprimez la distance focale $$f$$ en fonction de $$w$$ et $$\alpha$$
+* À partir de la position d'un point connue dans le repère du monde, comment connaître la position de
+ce point dans le repère de l'effecteur (et donc ici de la caméra)?
+* Comment calculer la taille (en pixels) d'une sphère de rayon connu $$r$$ (mètres) dans l'image?
+* Implémentez la fonction `camera` dans `model.py`. Cette fonction reçoit en paramètre les angles du bras robotique,
+la position de la cible que vous pouvez déplacer en 3D à l'aide des curseurs, la taille de l'image en pixels, et
+l'angle d'ouverture de la caméra (également changeable à l'aide des curseurs).
+La fonction retourne la position de la balle dans l'image ($$0,0$$ étant le centre de l'image)
+ainsi que sa taille (un rayon en pixels). La cible a un rayon de $$42mm$$.
+    * En lançant le programme avec `python sim.py -m camera`, la fonction sera appelée et
+        le résultat sera dessiné dans une autre fenêtre
+* Implémentez la fonction `camera2`, qui retourne la position des coins de l'image qui serait sur
+un écran situé à 2m, sauf si ce faisceau intersecte le sol.
+    * Pour tester, lancez le programme avec `python sim.py -m camera2`.
+     Le résultat final doit ressembler à la figure ci-dessous.
+
+<div class="text-center m-2">
+    <img src="/assets/imgs/camera2.png" width="300" />
+</div>

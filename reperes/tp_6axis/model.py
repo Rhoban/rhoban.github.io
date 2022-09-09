@@ -2,7 +2,7 @@ import numpy as np
 
 def direct(angles):
     """
-        Reçoit en paramètre les angles du robot (dictionnaire), retourne la
+        Reçoit en paramètre les angles du robot, retourne la
         matrice homogène 4x4 permettant de passer du repère de l'effecteur au
         repère du monde.
     """
@@ -13,7 +13,7 @@ def direct(angles):
 
 def laser(angles):
     """
-        Reçoit en paramètre les angles du robot (dictionnaire), retourne la
+        Reçoit en paramètre les angles du robot, retourne la
         position d'un laser qui serait émis par l'effecteur et qui arriverait au sol.
 
         Retourne None si le laser ne touche pas le sol.
@@ -22,7 +22,7 @@ def laser(angles):
 
 def camera(angles, target, imgSize, aperture):
     """
-        Reçoit en paramètre les angles du robot (dictionnaire), la position d'une cible dans
+        Reçoit en paramètre les angles du robot, la position d'une cible dans
         le monde et la taille de l'image d'une caméra d'ouverture de aperture radians.
 
         Retourne la position de la cible dans l'image de la caméra, ainsi que sa taille
@@ -32,7 +32,7 @@ def camera(angles, target, imgSize, aperture):
 
 def camera2(angles):
     """
-    Reçoit en paramètre les angles du robot (dictionnaire), retourne la position des coins
+    Reçoit en paramètre les angles du robot, retourne la position des coins
     de l'image projetés à 2m, sauf si ils intersectent le sol
     """
 

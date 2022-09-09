@@ -17,10 +17,10 @@ Le code sera la suite de la [partie 2D](/reperes/python2d)
 On peut définir une translation par un vecteur étant comme étant:
 
 ```python
-def translation(vector):
-    return np.array([[1, 0, 0, vector[0]],
-                     [0, 1, 0, vector[1]],
-                     [0, 0, 1, vector[2]],
+def translation(x, y, z):
+    return np.array([[1, 0, 0, x],
+                     [0, 1, 0, y],
+                     [0, 0, 1, z],
                      [0, 0, 0, 1]])
 ```
 
