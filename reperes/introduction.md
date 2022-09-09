@@ -182,6 +182,130 @@ Dans les illustrations et les logiciels, la convention de couleur est la suivant
 
 Pour s'en souvenir, pensez au moyen mémo-technique: **XYZ = RGB**
 
+## Un "couteau-suisse" important: le produit scalaire
+
+### Définition
+
+Le [produit scalaire](https://fr.wikipedia.org/wiki/Produit_scalaire) (en anglais *dot product*, car il est noté par
+un point) est une valeur scalaire obtenue à l'aide de deux vecteurs selon la définition suivante:
+
+$$
+\vec{u} \cdot \vec{v} =
+\lVert \vec{u} \rVert
+\lVert \vec{v} \rVert
+cos(\widehat{\vec{u}, \vec{v}})
+$$
+
+Où $$\widehat{\vec{u}, \vec{v}}$$ est l'angle entre les deux vecteurs $$\vec{u}$$ et $$\vec{v}$$.
+
+<div class="alert alert-warning">
+    Attention: souvenez-vous bien que la valeur `\vec{u} \cdot \vec{v}` est un scalaire (un nombre) et non pas un vecteur
+</div>
+
+### Propriétés
+
+**Le produit scalaire d'un vecteur avec lui même**
+
+Le produit scalaire de $$\vec{u}$$ avec lui-même est égal à sa norme au carré (le cosinus de $$0$$ étant égal à $$1$$):
+
+$$
+\vec{u} \cdot \vec{u} = \lVert \vec{u} \rVert ^2
+$$
+
+**Le produit scalaire est symétrique**
+
+$$\vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u}$$
+
+Ce qui découle de la commutativité des termes de la définition donnée précédemment, et du fait que la fonction
+cosinus est paire.
+
+**Le produit scalaire est compatible avec l'addition**
+
+$$
+\vec{a} (\vec{b} \cdot \vec{c})
+= \vec{a} \cdot \vec{b} + \vec{a} \cdot \vec{c}
+$$
+
+Pour plus d'informations: [bilinéarité du produit scalaire](https://fr.wikipedia.org/wiki/Produit_scalaire#Bilin%C3%A9arit%C3%A9).
+
+### Dans une base orthonormée
+
+Si on considère deux vecteurs $$\vec{u}$$ et $$\vec{v}$$ dont les coordonnées respectives dans une base orthonormée sont
+$$\begin{bmatrix} x_1 \\ y_1\end{bmatrix}$$ et $$\begin{bmatrix} x_2 \\ y_2\end{bmatrix}$$:
+
+<div class="text-center">
+    <img src="/assets/imgs/u_v.svg" />
+</div>
+
+$$\require{cancel}$$
+
+Alors:
+
+$$
+\begin{array}{ll}
+\vec{u} \cdot \vec{v}
+& = (x_1 \vec{i} + y_1 \vec{j}) \cdot (x_2 \vec{i} + y_2 \vec{j}) \\
+& = x_1 x_2 \cancelto{1}{(\vec{i} \cdot \vec{i})} + x_1 y_2 \cancelto{0}{(\vec{i} \cdot \vec{j})}
+ + y_1 x_2 \cancelto{0}{(\vec{j} \cdot \vec{i})} + y_1 y_2 \cancelto{1}{(\vec{j} \cdot \vec{j})} \\
+& = x_1 x_2 + y_1 y_2
+\end{array}
+$$
+
+(En 3D, on peut faire exactement le même raisonnement, le produit scalaire devient alors $$x_1 x_2 + y_1 y_2 + z_1 z_2$$).
+
+### Utilisation
+
+**Trouver l'angle entre deux vecteurs**
+
+On peut utiliser le produit scalaire pour trouver l'angle formé par deux vecteurs:
+
+$$
+\theta = cos^{-1} (\frac{x_1 x_2 + y_1 y_2}{\lVert \vec{u} \rVert \lVert \vec{v} \rVert})
+$$
+
+(Ne pas oublier que $$cos^{-1}$$ retourne une valeur entre $$0$$ et $$\pi$$).
+
+**Vérifier de quel côté d'un demi-plan/demi-espace/segment/droite on se trouve**
+
+Supposons que l'on ait un demi-plan (ou en 3D un demi-espace), défini par un point $$A$$ qui soit sur sa
+bordure, et un vecteur $$\vec{u}$$ normal à sa séparation:
+
+<div class="text-center">
+    <img src="/assets/imgs/half_plane.svg" />
+</div>
+
+Pour tester si un point $$P$$ appartient au demi-plan (partie verte ci-dessus), on peut utiliser le
+signe du produit scalaire $$\vec{u} \cdot \vec{AP}$$. Si ce dernier est positif, on sera dans le
+demi-plan (dans la partie "verte"), si il est négatif, on sera à l'extérieur du demi-plan (dans la partie
+"rouge"), et si il est nul, on sera sur la bordure.
+
+**Projeter un point sur une droite**
+
+Si on reprend l'exemple précédent, mais avec $$\vec{u}$$ unitaire, on a donc:
+
+$$\vec{u} \cdot \vec{AP} = cos(\theta) \lVert \vec{AP} \rVert $$
+
+Sur la figure suivante, on constate dans le triangle $$A$$, $$P$$, $$P'$$, que cette valeur est la distance
+de $$P$$ à la bordure du demi-plan:
+
+<div class="text-center">
+    <img src="/assets/imgs/half_plane_unit.svg" />
+</div>
+
+On peut donc trouver $$AP' = \vec{u} (\vec{u} \cdot \vec{AP})$$
+
+**Tester si deux vecteurs sont orthogonaux**
+
+On peut tester si deux vecteurs sont orthogonaux, en vérifiant que:
+
+$$\vec{u} \cdot \vec{v} = 0$$
+
+**Tester si trois points sont alignés**
+
+On peut tester si trois points $$A, B$$ et $$C$$ sont alignés en vérifiant que:
+
+$$\vec{AB} \cdot \vec{AC} = \lVert \vec{AB} \rVert \lVert \vec{AC} \rVert$$
+
 <hr/>
 
 Dans la partie suivante, nous parlerons des [changements de repères](/reperes/changements)

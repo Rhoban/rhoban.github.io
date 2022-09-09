@@ -24,7 +24,7 @@ concentrer sur trois algorithmes:
     <img src="/quadruped/img/zip.png" />
 
     <div>
-        <big><a href="/ia/tp_astar_value_iteration.zip">Téléchargez l'archive tp_astar_value_iteration.zip</a></big>
+        <big><a href="/ia/tp_golf.zip">Téléchargez l'archive tp_golf.zip</a></big>
         <br/>
         <em>Lisez les instructions ci-dessous</em>
     </div>

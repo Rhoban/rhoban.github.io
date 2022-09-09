@@ -4,9 +4,9 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/bootstrap.min.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
-    <link rel="stylesheet" href="{{ '/assets/rouge.highlight.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
-    <link rel="stylesheet" href="{{ '/assets/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/bootstrap.min.css?v=' | append: site.github.build_revision | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/rouge.highlight.css?v=' | append: site.github.build_revision | relative_url }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/style.css?v=' | append: site.github.build_revision | relative_url }}" type="text/css">
 
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Basic&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet"> 
@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black text-light d-print-none">
       <div class="container nav-container container-small">
         
       <!-- Site logo -->
@@ -60,7 +60,7 @@
         </section>
       </div>
       <hr/>
-      <div class="container footer">
+      <div class="container footer d-print-none">
         <a href="{{ path(site.github.owner_url) }}">
           <img src="/assets/imgs/github.png" />
           Rhoban
