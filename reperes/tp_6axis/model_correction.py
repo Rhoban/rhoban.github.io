@@ -91,14 +91,14 @@ def camera(angles, target, imgSize, aperture):
     target_world = [target[0], target[1], target[2], 1]
 
     # Expressing the target in the camera frame
-    target_camera = T_effector_world @ target_world
+    target_effector = T_effector_world @ target_world
 
     focale = (imgSize/2)/(aperture/2.0)
 
-    x = -target_camera[1] * focale/target_camera[0]
-    y = target_camera[2] * focale/target_camera[0]
+    x = -target_effector[1] * focale/target_effector[0]
+    y = target_effector[2] * focale/target_effector[0]
 
-    r = max(1, ((target_camera[2] + 0.042) * focale/target_camera[0]) - y)
+    r = max(1, ((target_effector[2] + 0.042) * focale/target_effector[0]) - y)
 
     return [x, y, r]
 

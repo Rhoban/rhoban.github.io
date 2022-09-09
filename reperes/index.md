@@ -21,6 +21,7 @@ et les changements de repères:
     * [TP Robot 2D](/reperes/tp_2d)
 * [Utilisations des repères](/reperes/utilisation)
 * [Rotations et transformations 3D](/reperes/3d)
+    * [Exercices](/reperes/ex_3d)
 * [Modèle direct de robots articulaires](/reperes/kinematics)
 * [Implementation en Python (3D)](/reperes/python3d)
     * [TP Robot 3 axes](/reperes/tp_3axis)
