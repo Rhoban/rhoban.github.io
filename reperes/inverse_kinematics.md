@@ -1,5 +1,5 @@
 ---
-title: Modèle direct de robots articulaires
+title: Modèle inverse de robots articulaires
 layout: default
 permalink: /reperes/inverse_kinematics
 mathjax: true
