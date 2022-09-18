@@ -13,6 +13,15 @@ donc sur le point $$A$$ et son "avant" est le vecteur $$\vec{i'}$$:
     <img src="/assets/imgs/robot_world.svg" />
 </div>
 
+<div class="alert alert-info">
+    <b>Pour chaque exercice, vous ferez:</b>
+    <ol>
+        <li>Un dessin sur papier avec des dimensions approximatives</li>
+        <li>Une esquisse OnShape (ou équivalent), vous devriez alors obtenir une solution numérique</li>
+        <li>Une résolution algébrique du problème (vous pouvez vous aider de Python comme calculatrice)</li>
+    </ol>
+</div>
+
 # Partie 1
 
 Chaque question de cette partie sont indépendantes.
