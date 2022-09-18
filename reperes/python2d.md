@@ -86,7 +86,7 @@ changement de repère de la façon suivante:
 P_r2 = np.array([1., 2.])
 # L'origine de r2 dans r1
 A = np.array([5., 2.])
-# L'angle entre x1 et x2 (les vecteurs x des deux repères)
+# L'angle entre i et i' (les vecteurs "x" des deux repères)
 alpha = 0.3
 
 # L'implémentation du changement de repère
@@ -137,7 +137,7 @@ Ainsi, le même exemple que précédemment pourra s'écrire:
 P_r2 = np.array([1., 2., 1.])
 # L'origine de r2 dans r1
 A = np.array([5., 2., 1.])
-# L'angle entre x1 et x2 (les vecteurs x des deux repères)
+# L'angle entre i et i' (les vecteurs "x" des deux repères)
 alpha = 0.3
 
 T_r1_r2 = frame(alpha, A)
