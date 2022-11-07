@@ -222,7 +222,7 @@ cosinus est paire.
 **Le produit scalaire est compatible avec l'addition**
 
 $$
-\vec{a} (\vec{b} \cdot \vec{c})
+\vec{a} \cdot (\vec{b} + \vec{c})
 = \vec{a} \cdot \vec{b} + \vec{a} \cdot \vec{c}
 $$
 
