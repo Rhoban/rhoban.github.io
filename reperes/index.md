@@ -27,3 +27,4 @@ et les changements de repères:
 * [Implementation en Python (3D)](/reperes/python3d)
     * [TP Robot 3 axes](/reperes/tp_3axis)
     * [TP Robot 6 axes](/reperes/tp_6axis)
+* [Modèle inverse de robots articulaires](/reperes/inverse_kinematics)
