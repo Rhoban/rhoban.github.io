@@ -1,5 +1,7 @@
 import numpy as np
 
+########## PARTIE 1 ##########
+
 def direct(angles):
     """
         Reçoit en paramètre les angles du robot, retourne la
@@ -10,6 +12,32 @@ def direct(angles):
                      [0.0, 1.0, 0.0, 0.5],
                      [0.0, 0.0, 1.0, 0.0],
                      [0.0, 0.0, 0.0, 1.0]])
+
+def direct_tool(angles):
+    """
+        Reçoit en paramètre les angles du robot, retourne la matrice homogène 4x4 permettant de
+        passer du repère de l'outtil au repère du monde.
+    """
+
+    return np.array([[1.0, 0.0, 0.0, 0.5],
+                     [0.0, 1.0, 0.0, 0.5],
+                     [0.0, 0.0, 1.0, 0.0],
+                     [0.0, 0.0, 0.0, 1.0]])
+
+
+def board(T_world_board, t):
+    """
+        Reçoit en paramètre la matrice 4x4 de transformation du "tableau" dans le monde et le temps.
+        Produit une matrice de l'endroit où amener l'effecteur pour tracer un cercle sur le tableau.
+    """
+
+    return np.array([[1.0, 0.0, 0.0, 1.0],
+                     [0.0, 1.0, 0.0, 0.0],
+                     [0.0, 0.0, 1.0, 1.0],
+                     [0.0, 0.0, 0.0, 1.0]])
+
+
+########## PARTIE 2 ##########
 
 def laser(angles):
     """
@@ -55,7 +83,7 @@ def points(M):
 
     return []
 
-def inverse(targets, x, y, z, yaw, pitch, roll):
+def inverse(angles, x, y, z, yaw, pitch, roll):
     """
     Reçoit la position actuelle des moteurs et une position cible, retourne une nouvelle position
     cible pour les moteurs pour que l'effecteur atteigne la position et l'orientation cible
@@ -63,4 +91,4 @@ def inverse(targets, x, y, z, yaw, pitch, roll):
 
     # Utiliser scipy.minimize
 
-    return {'motor'+str(k+1): 0 for k in range(6)}
+    return angles

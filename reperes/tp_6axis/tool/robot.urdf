@@ -1,0 +1,46 @@
+<robot name="onshape">
+<link name="pen">
+<collision>
+<origin xyz="-0.037 -5.18883e-18 2.19779e-16" rpy="1.5708 8.58714e-33 1.5708" />
+<geometry>
+<mesh filename="package:///pen.stl"/>
+</geometry>
+<material name="pen_material">
+<color rgba="0.6 0.580392 0.529412 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="0 0 0" rpy="0 0 0"/>
+<mass value="0" />
+<inertia ixx="0" ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+</inertial>
+<visual><geometry><box size="0 0 0" /></geometry></visual>
+</link>
+
+<link name="pen_1">
+<inertial>
+<origin xyz="0 0 0" rpy="0 0 0" />
+<mass value="0" />
+<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+</inertial>
+<visual>
+<origin xyz="-0.037 -5.18883e-18 2.19779e-16" rpy="1.5708 8.58714e-33 1.5708" />
+<geometry>
+<mesh filename="package:///pen.stl"/>
+</geometry>
+<material name="pen_1_visual_material">
+<color rgba="0.6 0.580392 0.529412 1.0"/>
+</material>
+</visual>
+</link>
+<joint name="pen_1_fixing" type="fixed">
+<origin xyz="0 0 0" rpy="0 -0 0" />
+<parent link="pen" />
+<child link="pen_1" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+
+</robot>

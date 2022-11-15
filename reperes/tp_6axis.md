@@ -51,7 +51,9 @@ de l'archive:
     <a href="/assets/imgs/6axis_drawing.png"><img src="/assets/imgs/6axis_drawing.png" class="responsive" width="600" /></a>
 </div>
 
-# 1. Modèle géométrique direct
+# Partie 1
+
+## 1. Modèle géométrique direct
 
 
 Le but de cette partie est d'implémenter le calcul du modèle géométrique direct du robot, en utilisant les
@@ -79,7 +81,37 @@ permettant de passer du repère de l'effecteur à l'origine du robot.
 * En bougeant les curseurs, valider que cela fonctionne en visualisant le repère qui devrait se positionner
 systématiquement au bout de l'effecteur.
 
-# 2. Un laser au sol
+## 2. Ajout d'un outil
+
+On souhaite ajouter un outil au bout de l'effecteur. Voici comment le modèle de l'outil et comment il sera fixé
+au bout de l'effecteur:
+
+<div class="text-center m-2">
+    <img src="/assets/imgs/6axis_tool.svg" width="350" />
+</div>
+
+1. Déterminez $$T_{et}$$, la matrice de transformation permettant de changer de repère de l'outil à l'effecteur du robot
+2. Implémentez la fonction `direct_tool` de manière à ce qu'elle retourne `T_world_tool`, la matrice qui permet de
+passer de l'outil au monde (en vous aidant de `direct` écrit précédemment)
+
+## 3. Dessin d'un cercle sur un "tableau"
+
+On propose maintenant de déplacer l'outil de manière à dessiner un cercle sur un "tableau":
+
+<div class="text-center m-2">
+    <img src="/assets/imgs/6axis_circle.png" width="350" />
+</div>
+
+Le tableau sera simplement simulé par un son coin inférieur gauche dans le mode `python sim.py -m board`.
+
+1. Modifier la fonction `board` de manière à ce que l'outil soit plaqué contre le tableau et perpendiculaire à lui.
+    Indication: vous pouvez construire une matrice `T_board_tool` et l'utiliser.
+2. Modifiez la fonction `board` de manière à ce qu'elle trace un cercle sur le tableau, centré en $$[0.2, 0.2]$$
+et de rayon $$10cm$$.
+
+# Partie 2
+
+## 1. Un laser au sol
 
 En exécutant le programme de cette façon: `python sim.py -m laser`, vous devriez voir un
 marqueur au sol apparaître. Ce dernier est le résultat de l'appel à `laser(angles)` dans
@@ -92,7 +124,7 @@ marqueur au sol apparaître. Ce dernier est le résultat de l'appel à `laser(an
 Implémentez la méthode `laser` qui calcule la position du laser au sol en fonction de la
 position des moteurs.
 
-# 3. Modèle géométrique inverse itératif
+## 2. Modèle géométrique inverse itératif
 
 Dans cette partie, nous allons contrôler le bras robotique à l'aide d'une cible en position et
 en orientation.
@@ -136,7 +168,7 @@ en s'appuyant sur la fonction de score expliquée ci-dessus et sur `scipy.minimi
 pour trouver le meilleur candidat.
 
 
-# 4. Une caméra
+## 3. Une caméra
 
 Supposons qu'une caméra soit accrochée au bout du bras du robot. On souhaite savoir comment un point
 $$P$$ se projette dans l'image de la caméra. Pour ce faire, on calcule tout d'abord la position du point
