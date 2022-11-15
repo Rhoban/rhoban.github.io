@@ -181,4 +181,4 @@ def board(T_world_board, t):
         [0., 0., 0., 1.],
     ])
 
-    return T_world_board @ T_board_tool @ np.linalg.inv(T_effector_tool)
+    return T_world_board @ T_board_tool @ frame_inv(T_effector_tool)
