@@ -78,6 +78,15 @@ def direct_tool(angles):
 
     return T_world_effector @ T_effector_tool
 
+def board(T_world_board, t):
+    T_board_tool = np.array([
+        [-1., 0., 0., 0.2 + np.cos(t*5)*.1],
+        [0., 1., 0.,  0.2 + np.sin(t*5)*.1],
+        [0., 0., -1., 0.],
+        [0., 0., 0., 1.],
+    ])
+
+    return T_world_board @ T_board_tool @ frame_inv(T_effector_tool)
 
 def laser(angles):
     """
@@ -171,14 +180,3 @@ def inverse(angles, x, y, z, yaw, pitch, roll):
     Y = minimize(inverseScore, angles, method="Nelder-Mead", options={"fatol": 0.001})
 
     return Y.x
-
-
-def board(T_world_board, t):
-    T_board_tool = np.array([
-        [-1., 0., 0., 0.2 + np.cos(t*5)*.1],
-        [0., 1., 0.,  0.2 + np.sin(t*5)*.1],
-        [0., 0., -1., 0.],
-        [0., 0., 0., 1.],
-    ])
-
-    return T_world_board @ T_board_tool @ frame_inv(T_effector_tool)
