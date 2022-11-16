@@ -83,7 +83,7 @@ systématiquement au bout de l'effecteur.
 
 ## 2. Ajout d'un outil
 
-On souhaite ajouter un outil au bout de l'effecteur. Voici comment le modèle de l'outil et comment il sera fixé
+On souhaite ajouter un outil au bout de l'effecteur. Voici le modèle de l'outil et comment il sera fixé
 au bout de l'effecteur:
 
 <div class="text-center m-2">
