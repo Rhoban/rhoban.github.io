@@ -30,7 +30,7 @@ sur un bras à 6 degrés de liberté en simulateur.
 Tout d'abord, installez les dépendances:
 
 ```bash
-pip install numpy pygame pybullet onshape-to-robot transforms3d scipy pin
+pip install numpy pygame pybullet onshape-to-robot transforms3d scipy
 ```
 
 Et lancez:
