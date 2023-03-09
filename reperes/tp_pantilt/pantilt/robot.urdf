@@ -1,0 +1,99 @@
+<robot name="onshape">
+<link name="motor1">
+<visual>
+<origin xyz="4.9525149599332836468e-17 -6.0063577242851290654e-18 0.025000000000000001388" rpy="0 -0 3.141592653589793116" />
+<geometry>
+<mesh filename="package:///motor1.stl"/>
+</geometry>
+<material name="motor1_material">
+<color rgba="0.98039215686274505668 0.71372549019607844922 0.0039215686274509803377 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="4.9525149599332836468e-17 -6.0063577242851290654e-18 0.025000000000000001388" rpy="0 -0 3.141592653589793116" />
+<geometry>
+<mesh filename="package:///motor1.stl"/>
+</geometry>
+<material name="motor1_material">
+<color rgba="0.98039215686274505668 0.71372549019607844922 0.0039215686274509803377 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="1.4573913914269719935e-17 -1.6413329103266163469e-18 0.014732022919103865063" rpy="0 0 0"/>
+<mass value="4.5854008617806112369" />
+<inertia ixx="0.022858017136451504181" ixy="0"  ixz="0" iyy="0.022858017136451514589" iyz="0" izz="0.044431183290139744657" />
+</inertial>
+</link>
+
+<link name="motor2">
+<visual>
+<origin xyz="5.2041704279304205129e-18 1.7347234759768070944e-18 -0.050000000000000002776" rpy="0 -0 9.4933487863449688241e-33" />
+<geometry>
+<mesh filename="package:///motor2.stl"/>
+</geometry>
+<material name="motor2_material">
+<color rgba="0.2313725490196078538 0.38039215686274507888 0.7058823529411765163 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="5.2041704279304205129e-18 1.7347234759768070944e-18 -0.050000000000000002776" rpy="0 -0 9.4933487863449688241e-33" />
+<geometry>
+<mesh filename="package:///motor2.stl"/>
+</geometry>
+<material name="motor2_material">
+<color rgba="0.2313725490196078538 0.38039215686274507888 0.7058823529411765163 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-3.6428208663272947933e-18 1.4323982339068491391e-18 0.077137962371498239311" rpy="0 0 0"/>
+<mass value="2.3123007344489319159" />
+<inertia ixx="0.0053172288740475706637" ixy="-7.1388978728039103052e-10"  ixz="0" iyy="0.0054988673011586762865" iyz="0" izz="0.0020989816149545050504" />
+</inertial>
+</link>
+
+<link name="effector">
+<visual>
+<origin xyz="3.4694469519536388407e-18 -0.17000000000000001221 0.047499999999999993616" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+<geometry>
+<mesh filename="package:///effector.stl"/>
+</geometry>
+<material name="effector_material">
+<color rgba="0.51372549019607838261 0.73725490196078435901 0.40784313725490195512 1.0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="3.4694469519536388407e-18 -0.17000000000000001221 0.047499999999999993616" rpy="-1.570796326794896558 -1.570796326794896558 0" />
+<geometry>
+<mesh filename="package:///effector.stl"/>
+</geometry>
+<material name="effector_material">
+<color rgba="0.51372549019607838261 0.73725490196078435901 0.40784313725490195512 1.0"/>
+</material>
+</collision>
+<inertial>
+<origin xyz="-0.0064944435697303851823 0.048599170582967893273 0.047499999999999986677" rpy="0 0 0"/>
+<mass value="0.44250519219144068828" />
+<inertia ixx="0.001079344001529137587" ixy="9.807009797440209781e-05"  ixz="4.2768178673147316578e-35" iyy="0.00077342798815271658706" iyz="1.8105356004817455509e-34" izz="0.00062836470827336114719" />
+</inertial>
+</link>
+
+<joint name="motor2" type="revolute">
+<origin xyz="-0.047500000000000298928 1.0813452006929134156e-16 0.12000000000000014821" rpy="1.5707963267948981123 -5.5511151231257915768e-16 1.5707963267948970021" />
+<parent link="motor2" />
+<child link="effector" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+<joint name="motor1" type="revolute">
+<origin xyz="5.5885802344581125039e-17 -1.9586696136725742994e-18 0.074999999999999997224" rpy="4.4408920985006261617e-16 1.5299109918252183054e-15 1.5707963267948970021" />
+<parent link="motor1" />
+<child link="motor2" />
+<axis xyz="0 0 1"/>
+<limit effort="1" velocity="20" />
+<joint_properties friction="0.0"/>
+</joint>
+
+
+</robot>
