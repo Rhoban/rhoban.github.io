@@ -7,11 +7,11 @@ class MLP(th.nn.Module):
 
         layers = [
             th.nn.Linear(input_dimension, 256),
-            th.nn.SiLU(),
+            th.nn.ReLU(),
             th.nn.Linear(256, 256),
-            th.nn.SiLU(),
+            th.nn.ReLU(),
             th.nn.Linear(256, 256),
-            th.nn.SiLU(),
+            th.nn.ReLU(),
             th.nn.Linear(256, output_dimension),
         ]
 
