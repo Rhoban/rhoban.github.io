@@ -28,3 +28,4 @@ et les changements de repères:
     * [TP Robot 3 axes](/reperes/tp_3axis)
     * [TP Robot 6 axes](/reperes/tp_6axis)
 * [Cinématique inverse](/reperes/inverse_kinematics)
+* [TP "Pan/tilt"](/reperes/tp_pantilt)

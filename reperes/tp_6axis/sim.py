@@ -20,10 +20,8 @@ target = None
 
 
 def resetBasePositionWithMatrix(target, T):
-    R = T[0:3, 0:3]
-    T = T.T[3, :3]
-    Q = mat2quat(R)
-    p.resetBasePositionAndOrientation(target, list(T), [Q[1], Q[2], Q[3], Q[0]])
+    t, q = sim.matrixToPose(T)
+    p.resetBasePositionAndOrientation(target, t, q)
 
 
 if args.mode == "direct":
@@ -165,21 +163,19 @@ while True:
             values = control.ik(list(targets.values()), T_world_effectorTarget)
             targets = {"r" + str(k + 1): values[k] for k in range(6)}
 
-            def touches_board(point_world):                
+            def touches_board(point_world):
                 point_board = np.linalg.inv(T_world_board) @ [*point_world, 1]
                 return abs(point_board[2]) < 5e-3
 
-            
             tool_world = T_world_tool[:3, 3]
             T_world_tool2 = model.direct_tool(list(targets.values()))
             tool_world2 = T_world_tool2[:3, 3]
 
             if touches_board(tool_world) and touches_board(tool_world2):
                 print("Segment touching the board")
-                p.addUserDebugLine(tool_world[:3], tool_world2, [0., 1., 0.], 5., 10.)
+                p.addUserDebugLine(tool_world[:3], tool_world2, [0.0, 1.0, 0.0], 5.0, 10.0)
             else:
                 print("Not touching the board")
-            
 
         sim.resetJoints(targets)
 
