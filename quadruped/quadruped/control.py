@@ -67,7 +67,7 @@ def draw(t):
 
     return [0., np.sin(t)*0.3, 0.]
 
-def legs(leg1, leg2, leg3, leg4):
+def legs(targets_robot):
     """
     python simulator.py -m legs
 

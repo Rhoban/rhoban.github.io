@@ -56,4 +56,6 @@ Voici les objectifs:
 sliders latéraux
 * En bonus, vous pourrez également écouter le paramètre `speed_rotation` pour gérer la rotation du robot.
 
+# Variante hexapode
 
+* [Consignes pour utiliser la variante hexapode](/quadruped/hexapod)

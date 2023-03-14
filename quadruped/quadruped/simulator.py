@@ -11,7 +11,8 @@ else:
 t = 0.
 dt = 0.01
 dirname = os.path.dirname(__file__) + '/models/'
-
+n_motors = 0
+jointsMap = []
 
 def init():
     """Initialise le simulateur"""
@@ -41,7 +42,8 @@ def setJoints(robot, joints):
         int -- identifiant du robot
         joints {list} -- liste des positions cibles (rad)
     """
-    jointsMap = [0, 1, 2, 4, 5, 6, 8, 9, 10, 12, 13, 14]
+    global jointsMap
+    
     for k in range(len(joints)):
         jointInfo = p.getJointInfo(robot, jointsMap[k])
         p.setJointMotorControl2(
@@ -72,7 +74,7 @@ def inverseUpdate(controls):
     y = p.readUserDebugParameter(controls[1])
     z = p.readUserDebugParameter(controls[2])
     p.resetBasePositionAndOrientation(
-        controls[3], [x, y, z+0.1], p.getQuaternionFromEuler([0, 0, 0]))
+        controls[3], [x, y, z + floatHeight], p.getQuaternionFromEuler([0, 0, 0]))
 
     return x, y, z
 
@@ -87,8 +89,10 @@ if __name__ == "__main__":
     # Arguments
     parser = argparse.ArgumentParser(prog="Quadruped")
     parser.add_argument('-m', type=str, help='Mode', default='motors')
+    parser.add_argument('-r', type=str, help='Robot', default='quadruped')
     args = parser.parse_args()
     mode = args.m
+    robot = args.r
 
     if mode not in ['motors', 'sandbox', 'direct', 'inverse', 'draw', 'legs', 'walk']:
         print('Le mode %s est inconnu' % mode)
@@ -96,30 +100,57 @@ if __name__ == "__main__":
 
     init()
     fixed = False
-    startPos = [0., 0., 0.1]
+    floatHeight = 0.15
+
+    if robot == 'quadruped':
+        oneLegStartPos = [-0.04, 0., floatHeight]
+        oneLegstartOrientation = [0., 0., math.pi + math.pi/4]
+        n_motors = 12
+        jointsMap = [0, 1, 2, 4, 5, 6, 8, 9, 10, 12, 13, 14]
+    else:
+        oneLegstartOrientation = [0., 0., 0.]
+        oneLegStartPos = [-0.095, 0., floatHeight]
+        n_motors = 18
+        jointsMap = list(range(18))
+
+    startPos = [0., 0., floatHeight]
     startOrientation = [0., 0., 0.]
 
     if mode == 'motors':
         motors_sliders = []
-        for k in range(12):
+        for k in range(n_motors):
             motors_sliders.append(p.addUserDebugParameter(
                 "motor_%d" % k, -math.pi, math.pi, 0.))
     elif mode == 'inverse' or mode == 'direct':
         fixed = True
-        startOrientation = [0., 0., math.pi + math.pi/4]
-        startPos = [-0.04, 0., 0.1]
+        startOrientation = oneLegstartOrientation
+        startPos = oneLegStartPos
         leg = inverseControls() if mode == 'inverse' else directControls()
     elif mode == 'draw':
         fixed = True
-        startOrientation = [0., 0., math.pi + math.pi/4]
-        startPos = [-0.04, 0., 0.1]
+        startOrientation = oneLegstartOrientation
+        startPos = oneLegStartPos
         lastLine = None
     elif mode == 'legs':
         fixed = True
-        leg1 = inverseControls('leg1_', -0.15, 0.15)
-        leg2 = inverseControls('leg2_', -0.15, -0.15)
-        leg3 = inverseControls('leg3_', 0.15, -0.15)
-        leg4 = inverseControls('leg4_', 0.15, 0.15)
+        legs = []
+        if robot == 'quadruped':
+            legs = [
+                inverseControls('leg1_', -0.15, 0.15),
+                inverseControls('leg2_', -0.15, -0.15),
+                inverseControls('leg3_', 0.15, -0.15),
+                inverseControls('leg4_', 0.15, 0.15)
+            ]
+        else:
+            legs = [
+                inverseControls('leg1_', 0.05, 0.24),
+                inverseControls('leg2_', -0.05, 0.24),
+                inverseControls('leg3_', -0.24, 0),
+                inverseControls('leg4_', -0.05, -0.24),
+                inverseControls('leg5_', 0.05, -0.24),
+                inverseControls('leg6_', 0.24, 0.)
+            ]       
+        
     elif mode == 'walk':
         speed_x = p.addUserDebugParameter('speed_x', -0.2, 0.2, 0.)
         speed_y = p.addUserDebugParameter('speed_y', -0.2, 0.2, 0.)
@@ -128,7 +159,7 @@ if __name__ == "__main__":
     elif mode == 'sandbox':
         print('Mode bac à sable...')
 
-    robot = loadModel('quadruped', fixed, startPos, startOrientation)
+    robot = loadModel(robot, fixed, startPos, startOrientation)
 
     # Boucle principale
     while True:
@@ -137,18 +168,18 @@ if __name__ == "__main__":
             for entry in motors_sliders:
                 joints.append(p.readUserDebugParameter(entry))
         elif mode == 'inverse':
-            joints = control.inverse(*inverseUpdate(leg)) + [0]*9
+            joints = control.inverse(*inverseUpdate(leg)) + [0]*(n_motors-3)
         elif mode == 'direct':
             alpha_slider, beta_slider, gamma_slider, target = leg
             alpha = p.readUserDebugParameter(alpha_slider)
             beta = p.readUserDebugParameter(beta_slider)
             gamma = p.readUserDebugParameter(gamma_slider)
-            joints = [alpha, beta, gamma] + [0]*9
+            joints = [alpha, beta, gamma] + [0]*(n_motors-3)
             x, y, z = control.direct(alpha, beta, gamma)
-            p.resetBasePositionAndOrientation(target, [x, y, z + 0.1],
+            p.resetBasePositionAndOrientation(target, [x, y, z + floatHeight],
                 p.getQuaternionFromEuler([0, 0, 0]))
         elif mode == 'draw':
-            joints = control.draw(t) + [0]*9
+            joints = control.draw(t) + [0]*(n_motors-3)
 
             def getLegTip():
                 res = p.getLinkState(robot, 3)
@@ -161,12 +192,11 @@ if __name__ == "__main__":
                 p.addUserDebugLine(lastLine[1], tip, (1., 0, 0), 2., 10.)
                 lastLine = time.time(), tip
         elif mode == 'legs':
-            leg1_xyz = inverseUpdate(leg1)
-            leg2_xyz = inverseUpdate(leg2)
-            leg3_xyz = inverseUpdate(leg3)
-            leg4_xyz = inverseUpdate(leg4)
+            legs_xyz = [
+                inverseUpdate(leg) for leg in legs
+            ]
 
-            joints = control.legs(leg1_xyz, leg2_xyz, leg3_xyz, leg4_xyz)
+            joints = control.legs(legs_xyz)
         elif mode == 'walk':
             x = p.readUserDebugParameter(speed_x)
             y = p.readUserDebugParameter(speed_y)
