@@ -108,8 +108,8 @@ if __name__ == "__main__":
         n_motors = 12
         jointsMap = [0, 1, 2, 4, 5, 6, 8, 9, 10, 12, 13, 14]
     else:
-        oneLegstartOrientation = [0., 0., 0.]
-        oneLegStartPos = [-0.095, 0., floatHeight]
+        oneLegstartOrientation = [0., 0., -math.pi/2]
+        oneLegStartPos = [-0.079, 0.032, floatHeight]
         n_motors = 18
         jointsMap = list(range(18))
 
