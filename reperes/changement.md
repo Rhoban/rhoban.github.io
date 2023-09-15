@@ -23,8 +23,8 @@ On peut par exemple prendre $$\{r_1\} = (O, \vec{i}, \vec{j})$$ et $$\{r_2\} = (
 
 On notera:
 
-* $$\begin{bmatrix} x \\ y \end{bmatrix}$$ les coordonnées de $$P_{r_1}$$, le point $$P$$ dans le repère $$\{ r_1 \}$$
-* $$\begin{bmatrix} x' \\ y' \end{bmatrix}$$ les coordonnées de $$P_{r_2}$$, le point $$P$$ dans le repère $$\{ r_2 \}$$
+* $$\begin{bmatrix} x \\ y \end{bmatrix}$$ les coordonnées $$P_{r_1}$$ du point $$P$$ dans le repère $$\{ r_1 \}$$
+* $$\begin{bmatrix} x' \\ y' \end{bmatrix}$$ les coordonnées $$P_{r_2}$$ du point $$P$$ dans le repère $$\{ r_2 \}$$
 
 Ce qui équivaut à dire:
 
