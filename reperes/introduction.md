@@ -306,6 +306,18 @@ On peut tester si trois points $$A, B$$ et $$C$$ sont alignés en vérifiant que
 
 $$\vec{AB} \cdot \vec{AC} = \lVert \vec{AB} \rVert \lVert \vec{AC} \rVert$$
 
+**Trouver la norme d'un vecteur**
+
+En utilisant le produit scalaire d'un vecteur avec lui-même, on a:
+
+$$\vec{u} \cdot \vec{u} = \lVert \vec{u} \rVert^2$$
+
+En 3D, on a donc par exemple:
+
+$$\vec{u} \cdot \vec{u} = x^2 + y^2 + z^2$$
+
+$$\lVert \vec{u} \rVert = \sqrt{\vec{u} \cdot \vec{u}} = \sqrt{x^2 + y^2 + z^2}$$
+
 <hr/>
 
 Dans la partie suivante, nous parlerons des [changements de repères](/reperes/changements)
