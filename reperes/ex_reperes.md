@@ -46,7 +46,7 @@ Ce point $$P$$ est connu pour se trouver dans le repère monde en $$\begin{bmatr
 
 Le point $$P$$ se situe en $$\begin{bmatrix} 5 \\ -2 \end{bmatrix}$$ dans le repère monde. Le robot se situe en
 $$\begin{bmatrix} 8 \\ 3 \end{bmatrix}$$ dans le repère monde. Il avance tout droit (c'est à dire le long du
-vecteur $$\vec{i'}$$) et se retrouve en $$(9, 4$$).
+vecteur $$\vec{i'}$$) et se retrouve en $$\begin{bmatrix}9 \\ 4 \end{bmatrix}$$.
 
 *Où se situe le point $$P$$ dans le repère du robot ?*
 
