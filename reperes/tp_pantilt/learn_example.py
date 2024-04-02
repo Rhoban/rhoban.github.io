@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import model_correction as model
 import numpy as np
 import torch as th
 from mlp import MLP
