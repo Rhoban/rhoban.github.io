@@ -2,7 +2,7 @@ import math
 import time
 from onshape_to_robot import simulation
 import pybullet as p
-import model_correction as model
+import model as model
 import argparse
 
 sim = simulation.Simulation("pantilt/robot.urdf", fixed=True, panels=True)
