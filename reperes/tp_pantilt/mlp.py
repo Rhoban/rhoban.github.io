@@ -6,11 +6,13 @@ class MLP(th.nn.Module):
         super().__init__()
 
         self.net = th.nn.Sequential(
-            th.nn.Linear(input_dimension, 3),
+            th.nn.Linear(input_dimension, 256),
             th.nn.ReLU(),
-            th.nn.Linear(3, 3),
+            th.nn.Linear(256, 256),
             th.nn.ReLU(),
-            th.nn.Linear(3, output_dimension),
+            th.nn.Linear(256, 256),
+            th.nn.ReLU(),
+            th.nn.Linear(256, output_dimension),
         )
 
     def forward(self, x):
