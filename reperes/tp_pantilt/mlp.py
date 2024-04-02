@@ -19,3 +19,9 @@ class MLP(th.nn.Module):
 
     def forward(self, x):
         return self.net(x)
+    
+    def load(self):
+        self.load_state_dict(th.load("weights"))
+
+    def save(self):
+        th.save(self.state_dict(), "weights")

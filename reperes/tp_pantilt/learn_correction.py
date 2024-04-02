@@ -1,11 +1,15 @@
 import model_correction as model
 import numpy as np
 import torch as th
+from torchinfo import summary
 import time
 from mlp import MLP
 
 net = MLP(2, 2)
-batch_size = 512
+# summary(net)
+# exit()
+
+batch_size = 256
 optimizer = th.optim.Adam(net.parameters(), 1e-3)
 
 for k in range(1024):
@@ -21,5 +25,5 @@ for k in range(1024):
     loss.backward()
     optimizer.step()
     print(loss)
-    
-th.save(net.state_dict(), "weights")
+
+net.save() 

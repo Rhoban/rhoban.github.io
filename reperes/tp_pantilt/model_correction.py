@@ -15,6 +15,9 @@ def direct(alpha, beta):
     """
     return utils.Rz(alpha) @ utils.translation(0, 0, l1) @ utils.Ry(beta) @ utils.translation(0, 0, l2)
 
+
+
+
 def laser(alpha, beta):
     """
         Reçoit en paramètre les angles du robot, retourne la
@@ -32,6 +35,12 @@ def laser(alpha, beta):
         return pos_on_floor[:2]
     else:
         return [0., 0.]
+    
+
+
+
+
+
 
 def inverse(x, y):
     """
@@ -55,7 +64,7 @@ def inverse_nn(x, y):
 
     if net is None:
         net = MLP(2, 2)
-        net.load_state_dict(th.load("weights"))
+        net.load()
 
     laser_pos = th.tensor([x, y])
     with th.no_grad():
